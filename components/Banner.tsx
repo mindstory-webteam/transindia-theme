@@ -252,7 +252,7 @@ export default function Banner() {
               <div style={{position:"relative", width:"88%", marginRight:"-24px"}}>
 
                 {/* ── CARD 1: ₹50L Health Cover (top-left) ── */}
-                <FloatingCard style={{top:"30%", left:"-15%"}}>
+                <FloatingCard style={{top:"30%", left:"-25%"}}>
                   <IconBox>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#00B3FB" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
@@ -261,7 +261,7 @@ export default function Banner() {
                   </IconBox>
                   <div>
                     <div style={{fontSize:18,fontWeight:900,color:"#fff",lineHeight:1.1}}>₹50L</div>
-                    <div style={{fontSize:11,color:"rgba(255,255,255,0.55)",marginTop:4,fontWeight:500}}>Health Cover</div>
+                    <div style={{fontSize:11,color:"rgba(255,255,255,0.55)",marginTop:4,fontWeight:500}}>Lifetime Security</div>
                   </div>
                 </FloatingCard>
 
@@ -284,11 +284,11 @@ export default function Banner() {
                       border:"2px solid rgba(5,18,80,0.9)",
                     }} />
                   </div>
-                  <div style={{fontSize:15,fontWeight:700,color:"#fff",lineHeight:1.1}}>Advisor Online</div>
+                  <div style={{fontSize:15,fontWeight:700,color:"#fff",lineHeight:1.1}}>Hassle-Free <br/> Claims</div>
                 </FloatingCard>
 
                 {/* ── CARD 3: 24 hrs Avg. Claim Time (bottom-left) ── */}
-                <FloatingCard style={{bottom:"18%", left:"-13%"}}>
+                <FloatingCard style={{bottom:"18%", left:"-28%"}}>
                   <IconBox>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#00B3FB">
                       <path fillRule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clipRule="evenodd" />
@@ -296,12 +296,12 @@ export default function Banner() {
                   </IconBox>
                   <div>
                     <div style={{fontSize:18,fontWeight:900,color:"#fff",lineHeight:1.1}}>24 hrs</div>
-                    <div style={{fontSize:11,color:"rgba(255,255,255,0.55)",marginTop:4,fontWeight:500}}>Avg. Claim Time</div>
+                    <div style={{fontSize:11,color:"rgba(255,255,255,0.55)",marginTop:4,fontWeight:500}}>Personalized Policy Guidance</div>
                   </div>
                 </FloatingCard>
 
                 {/* ── CARD 4: Renjith Kumar – Insurance Expert (bottom-right) ── */}
-                <FloatingCard style={{bottom:"18%", right:"-2%"}}>
+                <FloatingCard style={{bottom:"18%", right:"-12%"}}>
                   {/* Orange circle avatar — also bigger to match */}
                   <div style={{
                     width:52, height:52, borderRadius:"50%",
@@ -309,9 +309,9 @@ export default function Banner() {
                     display:"flex", alignItems:"center", justifyContent:"center",
                     flexShrink:0, fontSize:22, fontWeight:900, color:"#fff",
                     letterSpacing:"-0.5px",
-                  }}>R</div>
+                  }}>%</div>
                   <div>
-                    <div style={{fontSize:14,fontWeight:700,color:"#fff",lineHeight:1.2}}>Renjith Kumar</div>
+                    <div style={{fontSize:14,fontWeight:700,color:"#fff",lineHeight:1.2}}>Trusted by <br /> Thousands</div>
                     <div style={{fontSize:11,color:"#38BDF8",marginTop:4,fontWeight:600}}>Insurance Expert</div>
                   </div>
                 </FloatingCard>
