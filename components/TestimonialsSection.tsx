@@ -57,16 +57,9 @@ function TestimonialCard({
 }) {
   return (
     <div style={card}>
-      {/* Stars */}
       <Stars count={stars} />
-
-      {/* Quote mark */}
       <span style={quoteMark}>"</span>
-
-      {/* Quote text */}
       <p style={quoteText}>{quote}</p>
-
-      {/* Author */}
       <div style={authorRow}>
         <div style={avatar}>{initials}</div>
         <div>
@@ -81,69 +74,100 @@ function TestimonialCard({
 // ─── Section ─────────────────────────────────────────────────────────────────
 export default function TestimonialsSection() {
   return (
-    <section style={section}>
+    <>
+      <style>{RESPONSIVE_CSS}</style>
+      <section className="tm-section">
 
-      {/* Header */}
-      <div style={headerWrap}>
-        <h2 style={heading}>
-          <span style={{ color: "#1E293B" }}>Real people.</span>
-          <br />
-          <span style={{ color: "#F97316" }}>Real peace of mind</span>
-        </h2>
-        <p style={subheading}>
-          Hear from clients who found the right cover — and the right
-          <br />
-          support when it mattered.
-        </p>
-      </div>
+        {/* Header */}
+        <div className="tm-header">
+          <h2 style={heading}>
+            <span style={{ color: "#1E293B" }}>Real people.</span>
+            <br />
+            <span style={{ color: "#F97316" }}>Real peace of mind</span>
+          </h2>
+          <p className="tm-subheading">
+            Hear from clients who found the right cover — and the right
+            <br className="tm-br" />
+            support when it mattered.
+          </p>
+        </div>
 
-      {/* Cards */}
-      <div style={grid}>
-        {testimonials.map((t, i) => (
-          <TestimonialCard key={i} {...t} />
-        ))}
-      </div>
+        {/* Cards */}
+        <div className="tm-grid">
+          {testimonials.map((t, i) => (
+            <TestimonialCard key={i} {...t} />
+          ))}
+        </div>
 
-    </section>
+      </section>
+    </>
   );
 }
 
+// ─── Responsive CSS ───────────────────────────────────────────────────────────
+const RESPONSIVE_CSS = `
+  .tm-section {
+    width: 100%;
+    padding: clamp(48px, 8vw, 96px) clamp(16px, 5vw, 48px);
+    box-sizing: border-box;
+    background: #FFFFFF;
+    font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  }
+
+  .tm-header {
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 64px);
+  }
+
+  .tm-subheading {
+    font-size: clamp(14px, 1.4vw, 17px);
+    color: #64748B;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Hide inline <br> on mobile — text wraps naturally */
+  .tm-br { display: none; }
+  @media (min-width: 640px) { .tm-br { display: inline; } }
+
+  /* 3-column grid desktop */
+  .tm-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  /* Tablet: 2 columns */
+  @media (max-width: 900px) {
+    .tm-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile: 1 column */
+  @media (max-width: 560px) {
+    .tm-grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .tm-section * { transition: none !important; }
+  }
+`;
+
 // ─── Styles ──────────────────────────────────────────────────────────────────
-const section: React.CSSProperties = {
-  width: "100%",
-  padding: "96px 48px",
-  boxSizing: "border-box",
-  background: "#FFFFFF",
-  fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
-};
-
-const headerWrap: React.CSSProperties = {
-  textAlign: "center",
-  marginBottom: 64,
-};
-
 const heading: React.CSSProperties = {
-  fontSize: "clamp(36px, 4vw, 52px)",
+  fontSize: "clamp(28px, 4vw, 52px)",
   fontWeight: 800,
   lineHeight: 1.15,
   letterSpacing: "-0.02em",
   margin: "0 0 20px",
-};
-
-const subheading: React.CSSProperties = {
-  fontSize: 17,
-  color: "#64748B",
-  lineHeight: 1.7,
-  margin: 0,
-};
-
-const grid: React.CSSProperties = {
-  maxWidth: 1200,
-  margin: "0 auto",
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gap: 24,
-  alignItems: "stretch",
 };
 
 const card: React.CSSProperties = {

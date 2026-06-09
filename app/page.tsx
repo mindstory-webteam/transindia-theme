@@ -7,24 +7,19 @@ import InsuranceSections from "@/components/InsuranceSections";
 import Navbar from "@/components/Navbar";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import TransindiaFooter from "@/components/Transindiafooter";
-import Image from "next/image";
-
-
 
 export default function Home() {
   return (
-    <div>
-      <Navbar/>
-      <Banner/>
-      <InsuranceSection/>
-      <InsurancePlansSection/>
-      <ExploreToolsSection/>
-      <InsuranceSections/>
-      <TestimonialsSection/>
-      <CtaSection/>
-      
-      <TransindiaFooter/>
-
+    <div style={{ overflowX: "hidden", width: "100%" }}>
+      <Navbar />
+      <Banner />
+      <InsuranceSection />
+      <InsurancePlansSection />
+      <ExploreToolsSection />
+      <InsuranceSections />
+      <TestimonialsSection />
+      <CtaSection />
+      <TransindiaFooter />
     </div>
   );
 }

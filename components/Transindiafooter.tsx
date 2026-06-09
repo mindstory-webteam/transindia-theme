@@ -2,8 +2,6 @@
 
 import React from "react";
 
-// ── Replace all src values below with your uploaded image paths ──
-
 const LOGO_SRC          = "/images/logo/transindia.png";
 const ICON_ADDRESS_SRC  = "/images/Footer/location.svg";
 const ICON_PHONE_SRC    = "/images/Footer/call.svg";
@@ -48,7 +46,7 @@ const supportLinks = [
 const bottomLinks = ["Terms", "Privacy", "Disclaimer", "Cookie policy"];
 
 const FooterColumn: React.FC<{ title: string; links: string[] }> = ({ title, links }) => (
-  <div style={{ minWidth: 140 }}>
+  <div style={{ minWidth: 120 }}>
     <p
       style={{
         color: "#ffffff",
@@ -86,186 +84,220 @@ const FooterColumn: React.FC<{ title: string; links: string[] }> = ({ title, lin
 
 const TransindiaFooter: React.FC = () => {
   return (
-    <footer
-      style={{
-        backgroundColor: "#0d0f14",
-        color: "#9ca3af",
-        fontFamily: "'Segoe UI', Arial, sans-serif",
-        paddingTop: 48,
-        borderTop: "1px solid #1f2937",
-      }}
-    >
-      {/* Main content */}
-      <div
-        style={{
-          maxWidth: 1100,
-          margin: "0 auto",
-          padding: "0 32px",
-          display: "flex",
-          gap: 40,
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-        }}
-      >
-        {/* ── Left brand block ── */}
-        <div style={{ maxWidth: 220, minWidth: 180, flex: "1 1 180px" }}>
+    <>
+      <style>{RESPONSIVE_CSS}</style>
+      <footer className="tf-footer">
 
-          {/* LOGO */}
-          <div style={{ marginBottom: 14 }}>
-            <img
-              src={LOGO_SRC}
-              alt="Transindia logo"
-              style={{ height: 36, width: "auto", objectFit: "contain" }}
-            />
-          </div>
+        {/* Main content */}
+        <div className="tf-main">
 
-          <p
-            style={{
-              fontSize: 12,
-              color: "#9ca3af",
-              lineHeight: 1.65,
-              marginBottom: 20,
-              marginTop: 0,
-            }}
-          >
-            IRDAI licensed insurance partner based in Kochi.
-            <br />
-            Helping individuals and businesses across India find
-            <br />
-            the right protection since 2009.
-          </p>
+          {/* ── Left brand block ── */}
+          <div className="tf-brand">
+            <div style={{ marginBottom: 14 }}>
+              <img
+                src={LOGO_SRC}
+                alt="Transindia logo"
+                style={{ height: 36, width: "auto", objectFit: "contain" }}
+              />
+            </div>
 
-          {/* ADDRESS */}
-          <div style={{ display: "flex", gap: 8, marginBottom: 10, alignItems: "flex-start" }}>
-            <img
-              src={ICON_ADDRESS_SRC}
-              alt="Address"
-              style={{ width: 14, height: 14, objectFit: "contain", marginTop: 2, flexShrink: 0 }}
-            />
-            <p style={{ margin: 0, fontSize: 11.5, lineHeight: 1.6, color: "#9ca3af" }}>
-              1st Floor, Indel House, Changampuzha Nagar,
+            <p style={{ fontSize: 12, color: "#9ca3af", lineHeight: 1.65, marginBottom: 20, marginTop: 0 }}>
+              IRDAI licensed insurance partner based in Kochi.
               <br />
-              Kalamassery, Kochi – 682 033
+              Helping individuals and businesses across India find
+              <br />
+              the right protection since 2009.
             </p>
+
+            {/* ADDRESS */}
+            <div style={{ display: "flex", gap: 8, marginBottom: 10, alignItems: "flex-start" }}>
+              <img src={ICON_ADDRESS_SRC} alt="Address"
+                style={{ width: 14, height: 14, objectFit: "contain", marginTop: 2, flexShrink: 0 }} />
+              <p style={{ margin: 0, fontSize: 11.5, lineHeight: 1.6, color: "#9ca3af" }}>
+                1st Floor, Indel House, Changampuzha Nagar,
+                <br />
+                Kalamassery, Kochi – 682 033
+              </p>
+            </div>
+
+            {/* PHONE */}
+            <div style={{ display: "flex", gap: 8, marginBottom: 10, alignItems: "center" }}>
+              <img src={ICON_PHONE_SRC} alt="Phone"
+                style={{ width: 14, height: 14, objectFit: "contain", flexShrink: 0 }} />
+              <p style={{ margin: 0, fontSize: 11.5, color: "#9ca3af" }}>
+                1800 425 8084 (Toll-free)
+              </p>
+            </div>
+
+            {/* EMAIL */}
+            <div style={{ display: "flex", gap: 8, marginBottom: 24, alignItems: "center" }}>
+              <img src={ICON_EMAIL_SRC} alt="Email"
+                style={{ width: 14, height: 14, objectFit: "contain", flexShrink: 0 }} />
+              <p style={{ margin: 0, fontSize: 11.5, color: "#9ca3af" }}>
+                care@transindia.com
+              </p>
+            </div>
+
+            {/* SOCIAL ICONS */}
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+              {socialIcons.map((icon) => (
+                <a
+                  key={icon.name}
+                  href={icon.href}
+                  title={icon.name}
+                  style={{
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    width: 32, height: 32, borderRadius: "50%", overflow: "hidden",
+                    transition: "opacity 0.2s, transform 0.2s",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.opacity = "0.8";
+                    (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
+                    (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)";
+                  }}
+                >
+                  <img src={icon.src} alt={icon.name}
+                    style={{ width: 32, height: 32, objectFit: "cover" }} />
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* PHONE */}
-          <div style={{ display: "flex", gap: 8, marginBottom: 10, alignItems: "center" }}>
-            <img
-              src={ICON_PHONE_SRC}
-              alt="Phone"
-              style={{ width: 14, height: 14, objectFit: "contain", flexShrink: 0 }}
-            />
-            <p style={{ margin: 0, fontSize: 11.5, color: "#9ca3af" }}>
-              1800 425 8084 (Toll-free)
-            </p>
+          {/* ── Right nav columns ── */}
+          <div className="tf-nav-cols">
+            <FooterColumn title="Products" links={productLinks} />
+            <FooterColumn title="Company" links={companyLinks} />
+            <FooterColumn title="Support" links={supportLinks} />
           </div>
+        </div>
 
-          {/* EMAIL */}
-          <div style={{ display: "flex", gap: 8, marginBottom: 24, alignItems: "center" }}>
-            <img
-              src={ICON_EMAIL_SRC}
-              alt="Email"
-              style={{ width: 14, height: 14, objectFit: "contain", flexShrink: 0 }}
-            />
-            <p style={{ margin: 0, fontSize: 11.5, color: "#9ca3af" }}>
-              care@transindia.com
-            </p>
-          </div>
-
-          {/* SOCIAL ICONS */}
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            {socialIcons.map((icon) => (
+        {/* ── Bottom bar ── */}
+        <div className="tf-bottom">
+          <p style={{ margin: 0, fontSize: 11, color: "#6b7280" }}>
+            © 2025 Transindia Insurance Broking Pvt. Ltd. All rights reserved.
+          </p>
+          <div className="tf-bottom-links">
+            {bottomLinks.map((link) => (
               <a
-                key={icon.name}
-                href={icon.href}
-                title={icon.name}
+                key={link}
+                href="#"
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: 32,
-                  height: 32,
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                  transition: "opacity 0.2s, transform 0.2s",
+                  color: "#6b7280", fontSize: 11, textDecoration: "none", transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.opacity = "0.8";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.1)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)";
-                }}
+                onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#ffffff")}
+                onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "#6b7280")}
               >
-                <img
-                  src={icon.src}
-                  alt={icon.name}
-                  style={{ width: 32, height: 32, objectFit: "cover" }}
-                />
+                {link}
               </a>
             ))}
           </div>
         </div>
 
-        {/* ── Right nav columns ── */}
-        <div
-          style={{
-            display: "flex",
-            gap: 40,
-            flexWrap: "wrap",
-            flex: "2 1 400px",
-            justifyContent: "flex-end",
-          }}
-        >
-          <FooterColumn title="Products" links={productLinks} />
-          <FooterColumn title="Company" links={companyLinks} />
-          <FooterColumn title="Support" links={supportLinks} />
-        </div>
-      </div>
-
-      {/* ── Bottom bar ── */}
-      <div
-        style={{
-          borderTop: "1px solid #1f2937",
-          marginTop: 40,
-          padding: "14px 32px",
-          maxWidth: 1100,
-          margin: "40px auto 0",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: 12,
-        }}
-      >
-        <p style={{ margin: 0, fontSize: 11, color: "#6b7280" }}>
-          © 2025 Transindia Insurance Broking Pvt. Ltd. All rights reserved.
-        </p>
-        <div style={{ display: "flex", gap: 20 }}>
-          {bottomLinks.map((link) => (
-            <a
-              key={link}
-              href="#"
-              style={{
-                color: "#6b7280",
-                fontSize: 11,
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#ffffff")}
-              onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "#6b7280")}
-            >
-              {link}
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div style={{ height: 16 }} />
-    </footer>
+        <div style={{ height: 16 }} />
+      </footer>
+    </>
   );
 };
 
 export default TransindiaFooter;
+
+// ─── Responsive CSS ───────────────────────────────────────────────────────────
+const RESPONSIVE_CSS = `
+  .tf-footer {
+    background-color: #0d0f14;
+    color: #9ca3af;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding-top: 48px;
+    border-top: 1px solid #1f2937;
+  }
+
+  /* Main two-column layout */
+  .tf-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 32px);
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /* Brand block */
+  .tf-brand {
+    max-width: 220px;
+    min-width: 180px;
+    flex: 1 1 180px;
+  }
+
+  /* Nav columns wrapper */
+  .tf-nav-cols {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    flex: 2 1 400px;
+    justify-content: flex-end;
+  }
+
+  /* Bottom bar */
+  .tf-bottom {
+    border-top: 1px solid #1f2937;
+    margin-top: 40px;
+    padding: 14px clamp(16px, 4vw, 32px);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .tf-bottom-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* ── Tablet (≤768px): nav columns go 2-up under brand ── */
+  @media (max-width: 768px) {
+    .tf-main {
+      flex-direction: column;
+      gap: 32px;
+    }
+    .tf-brand {
+      max-width: 100%;
+      min-width: 0;
+    }
+    .tf-nav-cols {
+      flex: unset;
+      width: 100%;
+      justify-content: flex-start;
+      gap: 32px;
+    }
+  }
+
+  /* ── Mobile (≤480px): nav columns stack to single column ── */
+  @media (max-width: 480px) {
+    .tf-nav-cols {
+      flex-direction: column;
+      gap: 28px;
+    }
+    .tf-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .tf-bottom-links {
+      gap: 14px;
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .tf-footer * { transition: none !important; }
+  }
+`;

@@ -19,7 +19,6 @@ const PLANS = [
     desc:     "Protect your vehicle against damage, theft, and third-party liability with comprehensive motor coverage.",
     cta:      "Explore plans",
     href:     "#",
-   
     imageSrc: "/images/section-2/Group.png",
     imageAlt: "Motor Insurance illustration",
     imageBg:  "#F0F8FF",
@@ -29,7 +28,7 @@ const PLANS = [
     desc:     "Build financial security for your loved ones and plan a retirement without worries.",
     cta:      "Explore plans",
     href:     "#",
-     imageSrc: "/images/section-2/Bike courier riding through clouds, Express delivery service.png",
+    imageSrc: "/images/section-2/Bike courier riding through clouds, Express delivery service.png",
     imageAlt: "Life Insurance illustration",
     imageBg:  "#F5F0FF",
   },
@@ -211,7 +210,7 @@ const CSS = `
   .ips-container {
     max-width: 1500px;
     margin: 0 auto;
-    padding: 0 clamp(50px, 5vw, 88px);
+    padding: 0 clamp(20px, 5vw, 88px);
   }
 
   /* ── Top row ── */
@@ -227,7 +226,7 @@ const CSS = `
   .ips-heading { flex: 1; min-width: 260px; }
 
   .ips-title {
-    font-size: clamp(28px, 3.8vw, 48px);
+    font-size: clamp(26px, 3.8vw, 48px);
     font-weight: 900;
     color: #111827;
     line-height: 1.15;
@@ -239,7 +238,7 @@ const CSS = `
   .ips-teal   { color: #0BB5B5; }
 
   .ips-subtitle {
-    font-size: clamp(13.5px, 1.2vw, 15.5px);
+    font-size: clamp(13px, 1.2vw, 15.5px);
     color: #9CA3AF;
     line-height: 1.7;
     margin: 0;
@@ -271,6 +270,18 @@ const CSS = `
     color: #fff;
   }
 
+  /* On mobile, "View all" stretches full width below the heading */
+  @media(max-width: 540px) {
+    .ips-toprow {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .ips-view-all {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
   /* ── Cards grid — 4 equal-height columns ── */
   .ips-cards {
     display: grid;
@@ -280,8 +291,20 @@ const CSS = `
     align-items: stretch;
   }
 
-  @media(max-width:960px)  { .ips-cards { grid-template-columns: repeat(2, 1fr); } }
-  @media(max-width:520px)  { .ips-cards { grid-template-columns: 1fr; max-width: 400px; margin-inline: auto; } }
+  /* Tablet: 2 columns */
+  @media(max-width: 960px) {
+    .ips-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Mobile: 1 column */
+  @media(max-width: 520px) {
+    .ips-cards {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin-inline: auto;
+      margin-bottom: clamp(24px, 3.5vw, 40px);
+    }
+  }
 
   /* ── Single card ── */
   .ips-card {
@@ -300,10 +323,17 @@ const CSS = `
     box-shadow: 0 20px 48px rgba(0,0,0,0.11);
   }
 
-  /* Image zone — tall, takes up ~55% of card */
+  @media(hover: none) {
+    .ips-card:hover {
+      transform: none;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+  }
+
+  /* Image zone */
   .ips-card-img-wrap {
     width: 100%;
-    height: 130px;   /* tall image area matching the design */
+    height: clamp(110px, 12vw, 130px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -321,7 +351,7 @@ const CSS = `
 
   /* White body */
   .ips-card-body {
-    padding: 20px 22px 26px;
+    padding: clamp(16px, 2vw, 20px) clamp(16px, 2vw, 22px) clamp(20px, 2.5vw, 26px);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -330,7 +360,7 @@ const CSS = `
   }
 
   .ips-card-title {
-    font-size: clamp(16px, 1.4vw, 19px);
+    font-size: clamp(15px, 1.4vw, 19px);
     font-weight: 700;
     color: #111827;
     margin: 0;
@@ -338,7 +368,7 @@ const CSS = `
   }
 
   .ips-card-desc {
-    font-size: clamp(13px, 1.05vw, 14.5px);
+    font-size: clamp(12.5px, 1.05vw, 14.5px);
     color: #6B7280;
     line-height: 1.72;
     margin: 0;
@@ -371,24 +401,33 @@ const CSS = `
     box-shadow: 0 2px 20px rgba(0,0,0,0.05);
   }
 
+  /* On mobile, banner stacks vertically */
+  @media(max-width: 640px) {
+    .ips-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+
   /* Left: shield + text */
   .ips-banner-left {
     display: flex;
     align-items: center;
     gap: 18px;
     flex: 1;
-    min-width: 240px;
+    min-width: 220px;
   }
 
   .ips-banner-shield {
-    width: clamp(60px, 7vw, 90px);
+    width: clamp(52px, 7vw, 90px);
     height: auto;
     flex-shrink: 0;
     object-fit: contain;
   }
 
   .ips-banner-title {
-    font-size: clamp(15px, 1.5vw, 19px);
+    font-size: clamp(14px, 1.5vw, 19px);
     font-weight: 800;
     color: #0B2563;
     line-height: 1.3;
@@ -411,14 +450,24 @@ const CSS = `
     align-self: center;
   }
 
-  @media(max-width:720px) { .ips-banner-divider { display: none; } }
+  @media(max-width: 720px) { .ips-banner-divider { display: none; } }
 
   /* Right: stats with image icons */
   .ips-banner-stats {
     display: flex;
-    gap: clamp(16px, 3.5vw, 44px);
+    gap: clamp(12px, 3.5vw, 44px);
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+  }
+
+  /* On mobile, stats fill width evenly */
+  @media(max-width: 640px) {
+    .ips-banner-stats {
+      width: 100%;
+      justify-content: space-around;
+      gap: 16px;
+    }
   }
 
   .ips-banner-stat {
@@ -427,10 +476,10 @@ const CSS = `
     align-items: center;
     gap: 10px;
     text-align: center;
-    min-width: 68px;
+    min-width: 60px;
   }
 
-  /* Circular icon container — matches the soft-circle style in the image */
+  /* Circular icon container */
   .ips-stat-icon-wrap {
     width: 52px;
     height: 52px;
@@ -468,5 +517,14 @@ const CSS = `
   @keyframes ips-fadein {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Reduced motion ── */
+  @media(prefers-reduced-motion: reduce) {
+    .fade-up {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 `;

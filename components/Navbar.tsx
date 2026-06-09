@@ -22,8 +22,8 @@ const NAV_ITEMS: NavItem[] = [
 // ─── NAVBAR ───────────────────────────────────────────────────────────────────
 
 export default function Navbar() {
-  const [scrolled,    setScrolled]    = useState(false);
-  const [mobileOpen,  setMobileOpen]  = useState(false);
+  const [scrolled,   setScrolled]   = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   // Switch from transparent → solid on scroll
   useEffect(() => {
@@ -32,11 +32,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when drawer is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   return (
     <>
       <style>{CSS}</style>
 
-      <nav className={`nav-root${scrolled ? " nav-scrolled" : ""}`}>
+      <nav className={`nav-root${scrolled || mobileOpen ? " nav-scrolled" : ""}`}>
         <div className="nav-inner">
 
           {/* ── Logo ── */}
@@ -75,6 +81,7 @@ export default function Navbar() {
             className="nav-hamburger"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label="Toggle navigation"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? (
               <svg viewBox="0 0 24 24" width={22} height={22} stroke="currentColor" strokeWidth={2} fill="none">
@@ -102,8 +109,8 @@ export default function Navbar() {
               </a>
             ))}
             <div className="drawer-actions">
-              <a href="#" className="btn-outline">Become a PoSP</a>
-              <a href="#" className="btn-fill">Make a claim</a>
+              <a href="#" className="btn-outline drawer-btn">Become a PoSP</a>
+              <a href="#" className="btn-fill drawer-btn">Make a claim</a>
             </div>
           </div>
         )}
@@ -126,7 +133,6 @@ const CSS = `
     z-index: 200;
     font-family: 'Plus Jakarta Sans', sans-serif;
 
-    /* Transparent on load */
     background: transparent;
     border-bottom: 1px solid transparent;
     box-shadow: none;
@@ -134,11 +140,10 @@ const CSS = `
     transition:
       background 0.35s ease,
       border-color 0.35s ease,
-      box-shadow 0.35s ease,
-      backdrop-filter 0.35s ease;
+      box-shadow 0.35s ease;
   }
 
-  /* ── Scrolled state — theme dark blue ── */
+  /* ── Scrolled state (or drawer open) — theme dark blue ── */
   .nav-scrolled {
     background: #07174A;
     border-bottom: 1px solid rgba(56,189,248,0.12);
@@ -165,7 +170,7 @@ const CSS = `
   }
 
   .nav-logo-img {
-    height: 40px;       /* adjust to match your logo's natural proportions */
+    height: 40px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -222,6 +227,9 @@ const CSS = `
     background: transparent;
     font-family: inherit;
     transition: border-color 0.18s, background 0.18s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .btn-outline:hover {
@@ -243,6 +251,9 @@ const CSS = `
     font-family: inherit;
     box-shadow: 0 3px 14px rgba(244,98,42,0.45);
     transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .btn-fill:hover {
@@ -251,9 +262,11 @@ const CSS = `
     transform: translateY(-1px);
   }
 
-  /* ── Hamburger ── */
+  /* ── Hamburger — hidden on desktop ── */
   .nav-hamburger {
     display: none;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
@@ -261,6 +274,12 @@ const CSS = `
     margin-left: auto;
     flex-shrink: 0;
     color: #fff;
+    border-radius: 8px;
+    transition: background 0.18s;
+  }
+
+  .nav-hamburger:hover {
+    background: rgba(255,255,255,0.1);
   }
 
   /* ── Mobile Drawer ── */
@@ -270,6 +289,13 @@ const CSS = `
     padding: 8px 24px 24px;
     border-top: 1px solid rgba(255,255,255,0.08);
     background: #07174A;
+    /* Smooth open — max-height animation */
+    animation: drawer-open 0.22s ease forwards;
+  }
+
+  @keyframes drawer-open {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .drawer-link {
@@ -285,6 +311,10 @@ const CSS = `
     font-family: inherit;
   }
 
+  .drawer-link:last-of-type {
+    border-bottom: none;
+  }
+
   .drawer-actions {
     display: flex;
     gap: 12px;
@@ -292,14 +322,34 @@ const CSS = `
     flex-wrap: wrap;
   }
 
-  /* ── Responsive ── */
-  @media (max-width: 900px) {
-    .nav-links  { display: none; }
-    .nav-actions { display: none; }
-    .nav-hamburger { display: flex; }
+  /* Drawer CTA buttons stretch full-width on very small screens */
+  .drawer-btn {
+    flex: 1 1 120px;
+    text-align: center;
   }
 
+  /* ── Responsive breakpoints ── */
+
+  /* Tablet/mobile: hide desktop nav, show hamburger */
+  @media (max-width: 900px) {
+    .nav-links   { display: none; }
+    .nav-actions { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-inner { gap: 0; }
+  }
+
+  /* Small mobile: tighter padding */
   @media (max-width: 480px) {
     .nav-inner { padding: 0 16px; }
+    .drawer-actions { flex-direction: column; gap: 10px; }
+    .drawer-btn { flex: unset; width: 100%; }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .nav-drawer { animation: none; }
+    .nav-root, .btn-fill, .btn-outline, .nav-link, .nav-hamburger {
+      transition: none !important;
+    }
   }
 `;

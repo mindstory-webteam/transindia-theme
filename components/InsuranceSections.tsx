@@ -87,8 +87,8 @@ const Divider = () => (
 // ─── Section 1: Claim Process ─────────────────────────────────────────────────
 function ClaimSection() {
   return (
-    <section style={s.section}>
-      <div style={s.inner}>
+    <section className="is-section">
+      <div className="is-inner">
 
         {/* LEFT CARD */}
         <div style={{ ...s.card, position: "relative", overflow: "hidden", minHeight: 400 }}>
@@ -124,6 +124,7 @@ function ClaimSection() {
           <img
             src={CLAIM_FIGURE_SRC}
             alt="advisor"
+            className="is-claim-figure"
             style={{ position: "absolute", bottom: 0, right: 12, width: 130, objectFit: "contain", pointerEvents: "none" }}
           />
         </div>
@@ -156,8 +157,8 @@ function ClaimSection() {
 // ─── Section 2: Advisors ──────────────────────────────────────────────────────
 function AdvisorSection() {
   return (
-    <section style={{ ...s.section, background: "#F8FAFC" }}>
-      <div style={s.inner}>
+    <section className="is-section" style={{ background: "#F8FAFC" }}>
+      <div className="is-inner is-inner--reverse">
 
         {/* LEFT TEXT */}
         <div style={s.textBlock}>
@@ -185,14 +186,7 @@ function AdvisorSection() {
         <div style={{ ...s.card, gap: 0, overflow: "visible" }}>
           <p style={{ ...s.cardHeading, padding: "24px 24px 0" }}>Our coverage quality scores</p>
 
-          {/*
-            ── Blue hero banner with OVERFLOWING people figure ──
-            The wrapper is position:relative with overflow:visible so the
-            people image can bleed upward above the banner (matching Image 1).
-          */}
           <div style={{ position: "relative", margin: "16px 0 0", overflow: "visible" }}>
-
-            {/* Blue banner — overflow:hidden clips only the banner itself */}
             <div style={{ ...s.heroBanner, overflow: "hidden", borderRadius: "20px" }}>
               <div style={{ flex: 1 }}>
                 <p style={s.heroStat}>50K+</p>
@@ -201,16 +195,9 @@ function AdvisorSection() {
                   and peace of mind for every stage of life.
                 </p>
               </div>
-              {/* Spacer so text doesn't run under the absolute figure */}
               <div style={{ width: 148, flexShrink: 0 }} />
             </div>
 
-            {/*
-              People figure: positioned absolute to the banner wrapper.
-              bottom:0  → feet sit at the bottom edge of the banner.
-              top: auto with a negative value pulls the image UP so
-              it overflows above the banner boundary — exactly like Image 1.
-            */}
             <img
               src={BANNER_PEOPLE_SRC}
               alt="people"
@@ -221,8 +208,6 @@ function AdvisorSection() {
                 width: 160,
                 objectFit: "contain",
                 objectPosition: "bottom",
-                // This is the key: the image is taller than the banner,
-                // so it naturally overflows upward beyond the banner's top edge.
                 height: "calc(100% + 48px)",
                 pointerEvents: "none",
               }}
@@ -262,18 +247,13 @@ function AdvisorSection() {
 // ─── Section 3: Insurer Network ───────────────────────────────────────────────
 function InsurerSection() {
   return (
-    <section style={{ ...s.section, background: "#FFFFFF" }}>
-      <div style={s.inner}>
+    <section className="is-section" style={{ background: "#FFFFFF" }}>
+      <div className="is-inner">
 
-        {/*
-         * LEFT CARD — white card, no bottom padding so the logo grid
-         * tiles sit flush against the card's bottom edge exactly like the frame.
-         */}
-        <div style={{ ...s.card, padding: "24px 24px 0", overflow: "hidden" ,paddingBottom: "24px" }}>
+        <div style={{ ...s.card, padding: "24px 24px 24px", overflow: "hidden" }}>
           <p style={{ ...s.cardHeading, marginBottom: 4 }}>Our insurer network</p>
 
           <div style={s.logoGrid}>
-            {/* Regular logo tiles */}
             {insurerLogos.map((l, i) => (
               <div key={i} style={s.logoBox}>
                 <img
@@ -284,20 +264,8 @@ function InsurerSection() {
               </div>
             ))}
 
-            {/*
-             * "15+ more" teal tile with a heart-figure overflowing upward.
-             * position:relative + overflow:visible lets the illustration
-             * bleed above the tile boundary; the card's overflow:hidden
-             * clips it at the card edge.
-             */}
-            {/*
-              Teal tile: mint background, heart image centered and contained,
-              "15+ more" text overlaid in white centered on top of the image.
-            */}
             <div style={s.moreTile}>
-              {/* Positioned wrapper so text overlays the image */}
               <div style={{ position: "relative", width: "100%", display: "flex", justifyContent: "center" }}>
-                {/* Heart photo — contained, fills tile width */}
                 <img
                   src={MORE_TILE_FIGURE_SRC}
                   alt="15+ more insurers"
@@ -310,16 +278,14 @@ function InsurerSection() {
                     borderRadius: 10,
                   }}
                 />
-                {/* "15+ more" centered over the image */}
                 <span style={s.moreLabel}>15+ more</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* RIGHT TEXT — white theme */}
+        {/* RIGHT TEXT */}
         <div style={s.textBlock}>
-          {/* Pill — light gray style matching other sections */}
           <span style={s.pillGray}>WIDE PARTNER NETWORK</span>
 
           <h2 style={s.heading}>
@@ -333,7 +299,6 @@ function InsurerSection() {
             from across the market and find you the right balance of cover, exclusions, and price.
           </p>
 
-          {/* Bullets — standard light-theme colors */}
           <BulletList items={partnerBullets} />
 
           <div>
@@ -353,38 +318,75 @@ function InsurerSection() {
 // ─── Root ─────────────────────────────────────────────────────────────────────
 export default function InsuranceSections() {
   return (
-    <main style={{
-      fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
-      color: "#1E293B",
-      background: "#FFFFFF",
-      width: "100%",
-    }}>
-      <ClaimSection />
-      <Divider />
-      <AdvisorSection />
-      <Divider />
-      <InsurerSection />
-    </main>
+    <>
+      <style>{RESPONSIVE_CSS}</style>
+      <main style={{
+        fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
+        color: "#1E293B",
+        background: "#FFFFFF",
+        width: "100%",
+      }}>
+        <ClaimSection />
+        <Divider />
+        <AdvisorSection />
+        <Divider />
+        <InsurerSection />
+      </main>
+    </>
   );
 }
 
+// ─── Responsive CSS ───────────────────────────────────────────────────────────
+const RESPONSIVE_CSS = `
+  .is-section {
+    width: 100%;
+    padding: clamp(48px, 8vw, 96px) clamp(16px, 5vw, 48px);
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  .is-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+  }
+
+  /* On tablet/mobile, stack to single column */
+  @media (max-width: 860px) {
+    .is-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    /* AdvisorSection: text is first in DOM but visually second on desktop.
+       On mobile keep natural DOM order (text first, card second). */
+    .is-inner--reverse {
+      direction: ltr;
+    }
+  }
+
+  /* Hide decorative figure on small cards to prevent overflow clipping issues */
+  @media (max-width: 560px) {
+    .is-claim-figure {
+      display: none !important;
+    }
+  }
+
+  /* Touch: disable hover opacity flicker on buttons */
+  @media (hover: none) {
+    button:hover { opacity: 1 !important; background: inherit; }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+`;
+
 // ─── Styles ───────────────────────────────────────────────────────────────────
 const s: Record<string, React.CSSProperties> = {
-  section: {
-    width: "100%",
-    padding: "96px 48px",
-    boxSizing: "border-box",
-    background: "#fff",
-  },
-  inner: {
-    maxWidth: 1200,
-    margin: "0 auto",
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: 72,
-    alignItems: "center",
-  },
-
   // ── Card ──
   card: {
     background: "#FFFFFF",
@@ -490,7 +492,7 @@ const s: Record<string, React.CSSProperties> = {
   },
 
   heading: {
-    fontSize: "clamp(28px, 3.2vw, 42px)",
+    fontSize: "clamp(26px, 3.2vw, 42px)",
     fontWeight: 800,
     lineHeight: 1.15,
     color: "#1E293B",
@@ -580,15 +582,13 @@ const s: Record<string, React.CSSProperties> = {
     margin: 0,
   },
 
-  // ── Insurer logo grid — 2 columns, every row same height ──
+  // ── Insurer logo grid ──
   logoGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
-    gridAutoRows: "110px",   // every tile — logo or "more" — is exactly this tall
+    gridAutoRows: "110px",
     gap: 10,
   },
-
-  // Regular logo tile — white bg, subtle border, fixed height via grid row
   logoBox: {
     borderRadius: 14,
     padding: "16px",
@@ -597,10 +597,7 @@ const s: Record<string, React.CSSProperties> = {
     justifyContent: "center",
     background: "#FFFFFF",
     border: "1px solid #E8ECF0",
-    // height comes from gridAutoRows — do NOT set minHeight or height here
   },
-
-  // "15+ more" tile — same grid row height, teal bg, heart fills it
   moreTile: {
     position: "relative",
     borderRadius: 14,
@@ -611,9 +608,7 @@ const s: Record<string, React.CSSProperties> = {
     background: "#CCFBF1",
     border: "1px solid #99F6E4",
     padding: 0,
-    // height comes from gridAutoRows — matches every other tile exactly
   },
-
   moreLabel: {
     position: "absolute",
     top: "50%",
@@ -626,20 +621,6 @@ const s: Record<string, React.CSSProperties> = {
     zIndex: 2,
     whiteSpace: "nowrap",
     textShadow: "0 1px 6px rgba(0,0,0,0.4)",
-  },
-
-  // ── Dark section right-side styles ──
-  pillDark: {
-    display: "inline-block",
-    background: "rgba(255,255,255,0.06)",
-    color: "#CBD5E1",
-    fontSize: 11,
-    fontWeight: 700,
-    letterSpacing: "0.07em",
-    padding: "6px 16px",
-    borderRadius: 99,
-    width: "fit-content",
-    border: "1px solid rgba(255,255,255,0.15)",
   },
 
   btnDark: {

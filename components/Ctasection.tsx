@@ -3,10 +3,9 @@
 import React from "react";
 
 
-const SHIELD_SRC  = "/images/Cta/Protection shield, System security, Verified access.svg";      // Protection_shield image
-const FAMILY_SRC  = "/images/Cta/couple walks with baby.svg";      // couple_walks_with_baby image
+const SHIELD_SRC  = "/images/Cta/Protection shield, System security, Verified access.svg";
+const FAMILY_SRC  = "/images/Cta/couple walks with baby.svg";
 
-// ─── Phone SVG icon (inline, no extra file needed) ───────────────────────────
 const PhoneIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
     xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
@@ -20,61 +19,150 @@ const PhoneIcon = () => (
   </svg>
 );
 
-// ─── Section ─────────────────────────────────────────────────────────────────
 export default function CtaSection() {
   return (
-    <section style={s.section}>
-      <div style={s.inner}>
+    <>
+      <style>{`
+        .cta-inner {
+          max-width: 1280px;
+          margin: 0 auto;
+          min-height: 480px;
+          display: grid;
+          grid-template-columns: 52fr 48fr;
+          align-items: center;
+          padding: 0 64px;
+          box-sizing: border-box;
+        }
 
-        {/* ── LEFT: text ── */}
-        <div style={s.textCol}>
-          <h2 style={s.heading}>
-            Finding the right insurance<br />
-            shouldn't feel complicated.
-          </h2>
+        .cta-text-col {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          padding-right: 32px;
+          padding-top: 72px;
+          padding-bottom: 72px;
+        }
 
-          <p style={s.body}>
-            Our advisors will assess your situation and find the right product for your
-            life and budget. Free consultation, no pressure.
-          </p>
+        .cta-image-col {
+          position: relative;
+          height: 480px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+        }
 
-          <button
-            style={s.btn}
-            onMouseEnter={e => (e.currentTarget.style.background = "#EA580C")}
-            onMouseLeave={e => (e.currentTarget.style.background = "#F97316")}
-          >
-            Get free advice
-          </button>
+        .cta-btn {
+          display: inline-block;
+          align-self: flex-start;
+          background: #F97316;
+          color: #fff;
+          font-weight: 700;
+          font-size: 14px;
+          padding: 12px 26px;
+          border-radius: 8px;
+          border: none;
+          cursor: pointer;
+          transition: background 0.15s;
+          font-family: inherit;
+          letter-spacing: 0.01em;
+        }
 
-          <div style={s.phoneRow}>
-            <PhoneIcon />
-            <span style={s.phoneText}>
-              Or call us:&nbsp;
-              <span style={s.phoneNumber}>1800 425 8084</span>
-              &nbsp;(24/7 · Toll-free)
-            </span>
+        /* ── Tablet (≤900px) ── */
+        @media (max-width: 900px) {
+          .cta-inner {
+            grid-template-columns: 1fr;
+            padding: 48px 40px 0;
+            min-height: auto;
+          }
+          .cta-text-col {
+            padding-right: 0;
+            padding-top: 0;
+            padding-bottom: 40px;
+            text-align: center;
+            align-items: center;
+          }
+          .cta-btn {
+            align-self: center;
+          }
+          .cta-phone-row {
+            justify-content: center;
+          }
+          .cta-image-col {
+            height: 360px;
+            width: 100%;
+          }
+        }
+
+        /* ── Mobile (≤600px) ── */
+        @media (max-width: 600px) {
+          .cta-inner {
+            padding: 40px 20px 0;
+          }
+          .cta-text-col {
+            gap: 16px;
+            padding-bottom: 32px;
+          }
+          .cta-image-col {
+            height: 280px;
+          }
+          .cta-btn {
+            width: 100%;
+            text-align: center;
+          }
+        }
+      `}</style>
+
+      <section style={s.section}>
+        <div className="cta-inner">
+
+          {/* ── LEFT: text ── */}
+          <div className="cta-text-col">
+            <h2 style={s.heading}>
+              Finding the right insurance<br />
+              shouldn't feel complicated.
+            </h2>
+
+            <p style={s.body}>
+              Our advisors will assess your situation and find the right product for your
+              life and budget. Free consultation, no pressure.
+            </p>
+
+            <button
+              className="cta-btn"
+              onMouseEnter={e => (e.currentTarget.style.background = "#EA580C")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#F97316")}
+            >
+              Get free advice
+            </button>
+
+            <div className="cta-phone-row" style={s.phoneRow}>
+              <PhoneIcon />
+              <span style={s.phoneText}>
+                Or call us:&nbsp;
+                <span style={s.phoneNumber}>1800 425 8084</span>
+                &nbsp;(24/7 · Toll-free)
+              </span>
+            </div>
           </div>
-        </div>
 
-        {/* ── RIGHT: composite illustration — shield behind family ── */}
-        <div style={s.imageCol}>
-          {/* Shield — positioned behind the family, slightly left-center */}
-          <img
-            src={SHIELD_SRC}
-            alt=""
-            aria-hidden="true"
-            style={s.shieldImg}
-          />
-          {/* Family — sits on top of the shield */}
-          <img
-            src={FAMILY_SRC}
-            alt="Family protected by insurance shield"
-            style={s.familyImg}
-          />
-        </div>
+          {/* ── RIGHT: composite illustration — shield behind family ── */}
+          <div className="cta-image-col">
+            <img
+              src={SHIELD_SRC}
+              alt=""
+              aria-hidden="true"
+              style={s.shieldImg}
+            />
+            <img
+              src={FAMILY_SRC}
+              alt="Family protected by insurance shield"
+              style={s.familyImg}
+            />
+          </div>
 
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -87,30 +175,8 @@ const s: Record<string, React.CSSProperties> = {
     position: "relative",
     overflow: "hidden",
     fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
-    // Light warm-to-cool gradient matching the reference (image 4)
     background: "linear-gradient(110deg, #FFE8E3 0%, #FFF0EC 30%, #E8F8FF 65%, #C8F2FF 100%)",
     boxSizing: "border-box",
-  },
-
-  inner: {
-    maxWidth: 1280,
-    margin: "0 auto",
-    minHeight: 480,
-    display: "grid",
-    gridTemplateColumns: "52fr 48fr",
-    alignItems: "center",
-    padding: "0 64px",
-    boxSizing: "border-box",
-  },
-
-  // ── Left column ──
-  textCol: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 20,
-    paddingRight: 32,
-    paddingTop: 72,
-    paddingBottom: 72,
   },
 
   heading: {
@@ -130,22 +196,6 @@ const s: Record<string, React.CSSProperties> = {
     maxWidth: 460,
   },
 
-  btn: {
-    display: "inline-block",
-    alignSelf: "flex-start",
-    background: "#F97316",
-    color: "#fff",
-    fontWeight: 700,
-    fontSize: 14,
-    padding: "12px 26px",
-    borderRadius: 8,
-    border: "none",
-    cursor: "pointer",
-    transition: "background 0.15s",
-    fontFamily: "inherit",
-    letterSpacing: "0.01em",
-  },
-
   phoneRow: {
     display: "flex",
     alignItems: "center",
@@ -163,27 +213,11 @@ const s: Record<string, React.CSSProperties> = {
     color: "#374151",
   },
 
-  // ── Right column ──
-  // The column is the positioning context for both layered images
-  imageCol: {
-    position: "relative",
-    height: 480,
-    display: "flex",
-    alignItems: "flex-end",
-    justifyContent: "center",
-  },
-
-  // Shield: large oval, sits centre-left behind the family.
-  // In the reference the shield top edge reaches ~25 % from the top of the
-  // section and its centre is roughly aligned with the family's torsos.
   shieldImg: {
     position: "absolute",
-    // Vertically: top of shield ~20 % down, let it run to ~85 % down
     top: "8%",
     left: "50%",
-    // Nudge it left so the family's right side extends beyond the shield edge
     transform: "translateX(-62%)",
-    // Width drives the shield size; height stays auto to preserve aspect ratio
     width: "68%",
     maxWidth: 300,
     height: "auto",
@@ -195,13 +229,10 @@ const s: Record<string, React.CSSProperties> = {
     filter: "drop-shadow(0 12px 40px rgba(59,97,220,0.22))",
   },
 
-  // Family: anchored to the bottom, slightly right of centre so the shield
-  // peeks out to the left — matching the reference layout exactly.
   familyImg: {
     position: "absolute",
     bottom: 0,
     left: "50%",
-    // Slight rightward offset so the shield shows on the left
     transform: "translateX(-44%)",
     height: "94%",
     maxHeight: 450,
@@ -212,4 +243,5 @@ const s: Record<string, React.CSSProperties> = {
     userSelect: "none" as const,
     zIndex: 2,
   },
+
 };

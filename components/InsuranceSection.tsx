@@ -145,7 +145,7 @@ const CSS = `
 
   .ins-title {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(30px, 4.2vw, 54px);
+    font-size: clamp(28px, 4.2vw, 54px);
     font-weight: 800;
     line-height: 1.15;
     color: #1A1A1A;
@@ -159,46 +159,49 @@ const CSS = `
   }
 
   .ins-subtitle {
-    font-size: clamp(15px, 1.4vw, 17px);
+    font-size: clamp(14px, 1.4vw, 17px);
     color: #888;
     font-weight: 400;
     line-height: 1.7;
     margin: 0;
+    padding: 0 clamp(0px, 2vw, 20px);
   }
 
   .ins-br { display: none; }
   @media (min-width: 640px) { .ins-br { display: inline; } }
 
-  /* ── Cards grid — align-items:stretch makes all cards equal height ── */
+  /* ── Cards grid ── */
   .ins-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(16px, 2vw, 24px);
-    align-items: stretch;   /* KEY: all cells same height */
+    align-items: stretch;
   }
 
-  @media (max-width: 860px) {
+  /* ── Tablet: 2 columns ── */
+  @media (min-width: 560px) and (max-width: 900px) {
+    .ins-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ── Mobile: 1 column, constrained width ── */
+  @media (max-width: 559px) {
     .ins-cards {
       grid-template-columns: 1fr;
-      max-width: 460px;
+      max-width: 420px;
       margin: 0 auto;
     }
   }
-  @media (min-width: 560px) and (max-width: 860px) {
-    .ins-cards {
-      grid-template-columns: repeat(2, 1fr);
-      max-width: 100%;
-    }
-  }
 
-  /* ── Card shell — height:100% so it fills the grid cell ── */
+  /* ── Card shell ── */
   .ins-card {
     background: var(--card-bg);
     border-radius: 24px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    height: 100%;             /* fill full grid row height */
+    height: 100%;
     box-shadow: 0 4px 28px rgba(0,0,0,0.08);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
     position: relative;
@@ -209,11 +212,19 @@ const CSS = `
     box-shadow: 0 22px 56px rgba(0,0,0,0.13);
   }
 
-  /* ── Colored top zone — fixed tall height for long card proportion ── */
+  /* Disable hover lift on touch devices */
+  @media (hover: none) {
+    .ins-card:hover {
+      transform: none;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.08);
+    }
+  }
+
+  /* ── Colored top zone ── */
   .ins-card-colorzone {
     width: 100%;
-    height: 160px;            /* taller image zone = longer card feel */
-    flex-shrink: 0;           /* never compress */
+    height: clamp(130px, 14vw, 160px);
+    flex-shrink: 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -233,23 +244,23 @@ const CSS = `
     z-index: 2;
   }
 
-  /* ── White body — flex:1 makes it grow to fill remaining height equally ── */
+  /* ── White body ── */
   .ins-card-body {
     background: white;
     border-radius: 22px 22px 0 0;
     margin-top: -22px;
-    padding: 28px 28px 32px;
+    padding: clamp(20px, 3vw, 28px) clamp(20px, 3vw, 28px) clamp(24px, 3vw, 32px);
     display: flex;
     flex-direction: column;
     gap: 14px;
-    flex: 1;                  /* grow to fill — equalises text area across cards */
+    flex: 1;
     position: relative;
     z-index: 3;
   }
 
   .ins-card-title {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(17px, 1.5vw, 20px);
+    font-size: clamp(16px, 1.5vw, 20px);
     font-weight: 700;
     color: #111827;
     margin: 0;
@@ -257,14 +268,14 @@ const CSS = `
   }
 
   .ins-card-desc {
-    font-size: clamp(13.5px, 1.1vw, 15px);
+    font-size: clamp(13px, 1.1vw, 15px);
     color: #6B7280;
     line-height: 1.75;
     margin: 0;
-    flex: 1;                  /* pushes CTA to the bottom regardless of text length */
+    flex: 1;
   }
 
-  /* ── CTA always pinned to bottom ── */
+  /* ── CTA pinned to bottom ── */
   .ins-card-cta {
     display: inline-flex;
     align-items: center;
@@ -273,7 +284,7 @@ const CSS = `
     font-weight: 700;
     color: var(--accent);
     text-decoration: none;
-    margin-top: auto;         /* pin to bottom */
+    margin-top: auto;
     padding-top: 8px;
     transition: gap 0.22s ease;
   }
@@ -300,5 +311,14 @@ const CSS = `
   @keyframes ins-fadein {
     from { opacity: 0; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-in {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 `;

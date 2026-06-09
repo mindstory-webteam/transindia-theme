@@ -114,23 +114,22 @@ function QuoteBar() {
   );
 }
 
-// ─── Floating card: BIGGER — more padding, larger minWidth ───────────────────
 function FloatingCard({ children, style }: { children: React.ReactNode; style: React.CSSProperties }) {
   return (
-    <div style={{
+    <div className="floating-card" style={{
       position: "absolute",
       background: "rgba(5, 18, 80, 0.82)",
       border: "1.5px solid rgba(56, 189, 248, 0.28)",
       borderRadius: 18,
-      padding: "14px 22px 14px 14px",   // ← bigger padding
+      padding: "14px 22px 14px 14px",
       display: "flex",
       alignItems: "center",
-      gap: 14,                           // ← more gap
+      gap: 14,
       boxShadow: "0 4px 24px rgba(0,0,0,0.50)",
       zIndex: 10,
       backdropFilter: "blur(6px)",
       WebkitBackdropFilter: "blur(6px)",
-      minWidth: 185,                     // ← wider card
+      minWidth: 185,
       ...style,
     }}>
       {children}
@@ -138,11 +137,10 @@ function FloatingCard({ children, style }: { children: React.ReactNode; style: R
   );
 }
 
-// ─── Square icon box: BIGGER — 52×52 with larger border-radius ───────────────
 function IconBox({ children }: { children: React.ReactNode }) {
   return (
     <div style={{
-      width: 52, height: 52,            // ← bigger box (was 38)
+      width: 52, height: 52,
       borderRadius: 13,
       background: "rgba(14, 60, 180, 0.55)",
       border: "1px solid rgba(56,189,248,0.25)",
@@ -169,20 +167,133 @@ export default function Banner() {
         }
         .pulse-dot{animation:pulseDot 2s ease-in-out infinite}
 
+        /* ── TABLET (≤960px) ── */
         @media(max-width:960px){
-          .ins-inner{flex-direction:column!important;padding:40px 20px 0!important}
-          .ins-left{flex:unset!important;max-width:100%!important}
-          .ins-right{flex:unset!important;max-width:100%!important;width:100%!important}
-          .ins-quote-wrap{padding:0 20px!important}
-          .ins-quotebar{flex-direction:column!important;align-items:stretch!important;gap:14px!important;}
-          .ins-quotebar > div{border-right:none!important;min-width:0!important;padding:0!important;}
-          .ins-quote-col{padding:12px 0!important;border-top:1.5px solid #E5E9F2!important;}
-          .ins-quote-cta{margin-left:0!important;justify-content:center!important;}
+          .ins-section{
+            height:auto!important;
+            min-height:auto!important;
+            padding-bottom:0!important;
+            padding-top:80px!important;
+          }
+          .ins-inner{
+            flex-direction:column!important;
+            padding:32px 32px 0!important;
+            align-items:center!important;
+          }
+          .ins-left{
+            flex:unset!important;
+            max-width:100%!important;
+            width:100%!important;
+            padding-bottom:40px!important;
+            text-align:center!important;
+          }
+          .ins-left > div[style]{justify-content:center!important;}
+          .ins-right{
+            flex:unset!important;
+            max-width:100%!important;
+            width:100%!important;
+            align-items:center!important;
+            justify-content:center!important;
+          }
+          .ins-right > div{
+            width:80%!important;
+            margin-right:0!important;
+          }
+          .ins-right img{
+            max-width:280px!important;
+            margin:0 auto!important;
+          }
+          .floating-card{ display:none!important; }
+          .ins-quote-wrap{
+            position:relative!important;
+            bottom:0!important;
+            padding:24px 32px!important;
+            margin-top:0!important;
+          }
+          .ins-quotebar{
+            flex-direction:column!important;
+            align-items:stretch!important;
+            gap:0!important;
+            padding:20px!important;
+          }
+          .ins-quotebar > div:first-child{
+            border-right:none!important;
+            border-bottom:1.5px solid #E5E9F2!important;
+            padding:0 0 16px 0!important;
+            min-width:0!important;
+          }
+          .ins-quote-col{
+            padding:14px 0!important;
+            border-right:none!important;
+            border-bottom:1.5px solid #E5E9F2!important;
+            min-width:0!important;
+          }
+          .ins-quote-cta{
+            margin-left:0!important;
+            margin-top:16px!important;
+            justify-content:center!important;
+            width:100%!important;
+          }
+          .ins-spacer{
+            padding-top:${QUOTE_BAR_HALF + 32}px!important;
+          }
+        }
+
+        /* ── MOBILE (≤600px) ── */
+        @media(max-width:600px){
+          .ins-section{
+            padding-top:72px!important;
+          }
+          .ins-inner{
+            padding:24px 16px 0!important;
+          }
+          .ins-left{
+            padding-bottom:32px!important;
+          }
+          .ins-left h1{
+            font-size:clamp(26px,7.5vw,38px)!important;
+          }
+          .ins-left p{
+            font-size:14px!important;
+          }
+          .ins-cta-row{
+            flex-direction:column!important;
+            align-items:center!important;
+            gap:10px!important;
+          }
+          .ins-cta-row a{
+            width:100%!important;
+            text-align:center!important;
+            box-sizing:border-box!important;
+          }
+          .ins-stats{
+            justify-content:center!important;
+            gap:8px 0!important;
+          }
+          .ins-stats > div{
+            padding-right:12px!important;
+          }
+          .ins-right > div{
+            width:100%!important;
+          }
+          .ins-right img{
+            max-width:240px!important;
+          }
+          .ins-quote-wrap{
+            padding:20px 16px!important;
+          }
+          .ins-quotebar{
+            border-radius:14px!important;
+          }
+          .ins-spacer{
+            padding-top:32px!important;
+            padding-bottom:40px!important;
+          }
         }
       `}</style>
 
       <div className="ins-root">
-        <section style={{
+        <section className="ins-section" style={{
           background:"linear-gradient(160deg, #0B2080 0%, #0A1B6B 45%, #061448 100%)",
           position:"relative", overflow:"visible",
           paddingTop:88,
@@ -218,7 +329,7 @@ export default function Banner() {
                 processes, trusted advisors, and dependable claim support
                 whenever you need it.
               </p>
-              <div style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:56}}>
+              <div className="ins-cta-row" style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:56}}>
                 <a href="#" style={{padding:"14px 36px",background:"#F4622A",borderRadius:10,
                   color:"#fff",textDecoration:"none",fontSize:15,fontWeight:800,
                   boxShadow:"0 4px 26px rgba(244,98,42,0.5)",whiteSpace:"nowrap"}}>
@@ -231,7 +342,7 @@ export default function Banner() {
                   Talk to an expert
                 </a>
               </div>
-              <div style={{display:"flex",alignItems:"flex-start",flexWrap:"wrap"}}>
+              <div className="ins-stats" style={{display:"flex",alignItems:"flex-start",flexWrap:"wrap"}}>
                 {STATS.map((s,i)=>(
                   <div key={s.label} style={{display:"flex",alignItems:"flex-start",gap:18,paddingRight:18}}>
                     {i!==0 && <div style={{width:1,height:40,background:"rgba(255,255,255,0.15)",flexShrink:0,marginTop:2}} />}
@@ -277,7 +388,6 @@ export default function Banner() {
                         <path d="M18 14v1a3 3 0 01-3 3h-2" strokeLinecap="round"/>
                       </svg>
                     </IconBox>
-                    {/* Green pulse dot */}
                     <div className="pulse-dot" style={{
                       position:"absolute", top:-2, right:-2,
                       width:12, height:12, borderRadius:"50%", background:"#4ADE80",
@@ -302,7 +412,6 @@ export default function Banner() {
 
                 {/* ── CARD 4: Renjith Kumar – Insurance Expert (bottom-right) ── */}
                 <FloatingCard style={{bottom:"18%", right:"-12%"}}>
-                  {/* Orange circle avatar — also bigger to match */}
                   <div style={{
                     width:52, height:52, borderRadius:"50%",
                     background:"#00B3FB",
@@ -338,7 +447,7 @@ export default function Banner() {
         </section>
 
         {/* Spacer below banner to clear the overlapping QuoteBar */}
-        <div style={{
+        <div className="ins-spacer" style={{
           background:"#F0F4FA",
           paddingTop:`${QUOTE_BAR_HALF + 64}px`,
           paddingBottom:64,

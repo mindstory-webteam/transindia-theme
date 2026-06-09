@@ -12,7 +12,7 @@ interface CalculatorItem {
 interface Category {
   title: string;
   badgeImg: string;
-  badgeBg: string;   // ← background color for the badge image container
+  badgeBg: string;
   headerBg: string;
   iconBg: string;
   items: CalculatorItem[];
@@ -24,7 +24,7 @@ const categories: Category[] = [
   {
     title: "Home & Property\ncalculators",
     badgeImg: "/images/section-3/home security concept with smart house icon.svg",
-    badgeBg: "#FFBE8C",   // orange tint behind the badge image
+    badgeBg: "#FFBE8C",
     headerBg: "#FFF3E8",
     iconBg: "#FFF3E8",
     items: [
@@ -37,7 +37,7 @@ const categories: Category[] = [
   {
     title: "Money & Finance\nCalculators",
     badgeImg: "/images/section-3/coins.svg",
-    badgeBg: "#A8F0C6",   // green tint
+    badgeBg: "#A8F0C6",
     headerBg: "#EDFDF4",
     iconBg: "#EDFDF4",
     items: [
@@ -50,7 +50,7 @@ const categories: Category[] = [
   {
     title: "Daily Life\nCalculators",
     badgeImg: "/images/section-3/budget management with financial calculator and money coins.svg",
-    badgeBg: "#C4A8F5",   // purple tint
+    badgeBg: "#C4A8F5",
     headerBg: "#F3EFFE",
     iconBg: "#F3EFFE",
     items: [
@@ -101,12 +101,6 @@ function CalculatorRow({
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        {/*
-          ── ROW ICON ──
-          Container: 32×32 px (down from 40×40).
-          Image renders at 20×20 px inside, centered.
-          Set iconBg per category for the tinted background.
-        */}
         <div
           style={{
             width: 32,
@@ -155,17 +149,7 @@ function CalculatorRow({
 
 function CategoryCard({ cat }: { cat: Category }) {
   return (
-    <div
-      style={{
-        background: "#FFFFFF",
-        borderRadius: 20,
-        border: "1px solid #F0F0F0",
-        boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-        overflow: "hidden",
-        flex: "1 1 0",
-        minWidth: 0,
-      }}
-    >
+    <div className="et-card">
       {/* ── HEADER ── */}
       <div
         style={{
@@ -176,12 +160,6 @@ function CategoryCard({ cat }: { cat: Category }) {
           gap: 16,
         }}
       >
-        {/*
-          ── BADGE IMAGE ──
-          Container: 64×64 px with its own background color (cat.badgeBg).
-          Image renders at 40×40 px, centered and contained.
-          To change: update badgeBg and badgeImg in the categories array above.
-        */}
         <div
           style={{
             width: 64,
@@ -320,56 +298,105 @@ export default function ExploreToolsSection() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');`}</style>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
-      <section
-        style={{
-          background: "#FFFFFF",
-          padding: "72px 24px",
-          fontFamily: "'DM Sans', sans-serif",
-        }}
-      >
+        .et-section {
+          background: #FFFFFF;
+          padding: clamp(48px, 8vw, 72px) clamp(16px, 5vw, 24px);
+          font-family: 'DM Sans', sans-serif;
+        }
+
+        .et-heading {
+          text-align: center;
+          margin-bottom: clamp(32px, 5vw, 48px);
+        }
+
+        .et-heading h2 {
+          font-size: clamp(26px, 4vw, 40px);
+          font-weight: 800;
+          color: #1A1A2E;
+          margin: 0 0 14px 0;
+          letter-spacing: -0.03em;
+          line-height: 1.15;
+        }
+
+        .et-heading p {
+          font-size: clamp(14px, 1.3vw, 16px);
+          color: #6B7280;
+          max-width: 480px;
+          margin: 0 auto;
+          line-height: 1.65;
+          font-weight: 400;
+        }
+
+        /* Cards grid — 3 columns desktop */
+        .et-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          max-width: 1140px;
+          margin: 0 auto;
+        }
+
+        /* Tablet: 2 columns */
+        @media (max-width: 900px) {
+          .et-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        /* Mobile: 1 column */
+        @media (max-width: 560px) {
+          .et-grid {
+            grid-template-columns: 1fr;
+            max-width: 440px;
+          }
+        }
+
+        /* Card shell */
+        .et-card {
+          background: #FFFFFF;
+          border-radius: 20px;
+          border: 1px solid #F0F0F0;
+          box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+
+        /* Disable hover lift on touch */
+        @media (hover: none) {
+          .et-card:hover {
+            transform: none !important;
+          }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+          .et-card * {
+            transition: none !important;
+          }
+        }
+      `}</style>
+
+      <section className="et-section">
         {/* Heading */}
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2
-            style={{
-              fontSize: "clamp(28px, 4vw, 40px)",
-              fontWeight: 800,
-              color: "#1A1A2E",
-              margin: "0 0 14px 0",
-              letterSpacing: "-0.03em",
-              lineHeight: 1.15,
-            }}
-          >
+        <div className="et-heading">
+          <h2>
             Explore{" "}
             <span style={{ color: "#F97316" }}>useful</span>
             {" "}tools
           </h2>
-          <p
-            style={{
-              fontSize: 16,
-              color: "#6B7280",
-              maxWidth: 480,
-              margin: "0 auto",
-              lineHeight: 1.65,
-              fontWeight: 400,
-            }}
-          >
+          <p>
             Simplify everyday calculations with our easy-to-use tools.
             <br />Browse by category and find the right tool for you.
           </p>
         </div>
 
         {/* Cards grid */}
-        <div
-          style={{
-            display: "flex",
-            gap: 20,
-            maxWidth: 1140,
-            margin: "0 auto",
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="et-grid">
           {categories.map((cat) => (
             <CategoryCard key={cat.title} cat={cat} />
           ))}
