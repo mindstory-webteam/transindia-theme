@@ -2,11 +2,11 @@ import React from "react";
 
 const leaders = [
   { id: 1, name: "Rajesh Sharma", role: "Founder & CEO", image: "https://randomuser.me/api/portraits/men/32.jpg" },
-  { id: 2, name: "Arjun Mehta", role: "Managing Director", image: "https://randomuser.me/api/portraits/men/46.jpg" },
-  { id: 3, name: "Vikram Nair", role: "Chief Operating Officer", image: "https://randomuser.me/api/portraits/men/65.jpg" },
-  { id: 4, name: "Suresh Pillai", role: "Head of Broking", image: "https://randomuser.me/api/portraits/men/41.jpg" },
-  { id: 5, name: "Aditya Kumar", role: "VP - Risk Management", image: "https://randomuser.me/api/portraits/men/55.jpg" },
-  { id: 6, name: "Pradeep Rao", role: "Head of Claims", image: "https://randomuser.me/api/portraits/men/78.jpg" },
+  { id: 2, name: "Arjun Mehta", role: "Managing Director", image: "https://randomuser.me/api/portraits/men/32.jpg" },
+  { id: 3, name: "Vikram Nair", role: "Chief Operating Officer", image: "https://randomuser.me/api/portraits/men/32.jpg" },
+  { id: 4, name: "Suresh Pillai", role: "Head of Broking", image: "https://randomuser.me/api/portraits/men/32.jpg" },
+  { id: 5, name: "Aditya Kumar", role: "VP - Risk Management", image: "https://randomuser.me/api/portraits/men/32.jpg" },
+  { id: 6, name: "Pradeep Rao", role: "Head of Claims", image: "https://randomuser.me/api/portraits/men/32.jpg" },
 ];
 
 export default function OurMembers() {
