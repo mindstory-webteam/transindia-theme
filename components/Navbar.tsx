@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 
 interface NavItem {
   label: string;
   hasDropdown?: boolean;
+  href?: string;
 }
 
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
@@ -15,7 +17,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Our products",          hasDropdown: true  },
   { label: "Renew existing policy", hasDropdown: true  },
   { label: "Become an advisor" },
-  { label: "About us" },
+  { label: "About us",              href: "/about"     },
   { label: "Contact us" },
 ];
 
@@ -46,26 +48,26 @@ export default function Navbar() {
         <div className="nav-inner">
 
           {/* ── Logo ── */}
-          <a href="#" className="nav-logo">
+          <Link href="/" className="nav-logo">
             <img
               src="/images/logo/transindia.png"
               alt="TransIndia logo"
               className="nav-logo-img"
             />
-          </a>
+          </Link>
 
           {/* ── Desktop Nav Links ── */}
           <ul className="nav-links">
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
-                <a href="#" className="nav-link">
+                <Link href={item.href || "#"} className="nav-link">
                   {item.label}
                   {item.hasDropdown && (
                     <svg viewBox="0 0 20 20" fill="currentColor" width={13} height={13} style={{ opacity: 0.65, flexShrink: 0 }}>
                       <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd"/>
                     </svg>
                   )}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -99,14 +101,14 @@ export default function Navbar() {
         {mobileOpen && (
           <div className="nav-drawer">
             {NAV_ITEMS.map((item) => (
-              <a key={item.label} href="#" className="drawer-link">
+              <Link key={item.label} href={item.href || "#"} className="drawer-link" onClick={() => setMobileOpen(false)}>
                 {item.label}
                 {item.hasDropdown && (
                   <svg viewBox="0 0 20 20" fill="currentColor" width={14} height={14} style={{ opacity: 0.5 }}>
                     <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd"/>
                   </svg>
                 )}
-              </a>
+              </Link>
             ))}
             <div className="drawer-actions">
               <a href="#" className="btn-outline drawer-btn">Become a PoSP</a>
