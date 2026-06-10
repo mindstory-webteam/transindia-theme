@@ -1,3 +1,4 @@
+import OurMembers from "@/components/about/OurMembers";
 import OurStory from "@/components/about/OurStory";
 import WhyChooseUs from "@/components/about/WhyChooseUs";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <div style={{ overflowX: "hidden", width: "100%" }}>
     <OurStory/>
     <WhyChooseUs/>
+    <OurMembers/>
     </div>
   );
 }
