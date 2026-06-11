@@ -73,7 +73,7 @@ export default function ContactFormSection() {
         <div className="cfs-form-col">
           <p className="cfs-eyebrow">SEND US A MESSAGE</p>
           <h2 className="cfs-heading">
-            How can we <span className="cfs-hl">help you</span> ?
+            How can we <span className="cfs-hl">help you ?</span> 
           </h2>
 
           {/* Tabs */}

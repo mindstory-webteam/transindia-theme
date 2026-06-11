@@ -274,7 +274,7 @@ export default function FAQSection() {
       <style jsx>{`
         .faq-section {
           background: #ffffff;
-          padding: 120px 24px;
+          padding: 80px 24px 120px 24px;
           font-family: "Poppins", sans-serif;
         }
 
