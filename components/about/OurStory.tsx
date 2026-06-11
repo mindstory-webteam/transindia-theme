@@ -106,7 +106,7 @@ const CSS = `
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px;
+    padding: 180px 20px 80px;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
@@ -287,7 +287,7 @@ const CSS = `
   }
 
   @media (max-width: 768px) {
-    .our-story-section { padding: 60px 20px; }
+    .our-story-section { padding: 130px 20px 60px; }
     .our-story-container { padding: 0 20px; }
     .heading-dark, .heading-primary { font-size: 32px; }
     .check-items-grid { grid-template-columns: 1fr; }
