@@ -18,7 +18,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Renew existing policy", hasDropdown: true  },
   { label: "Become an advisor" },
   { label: "About us",              href: "/about"     },
-  { label: "Contact us" },
+  { label: "Contact us",   href: "/contact-us"  },
 ];
 
 // ─── NAVBAR ───────────────────────────────────────────────────────────────────

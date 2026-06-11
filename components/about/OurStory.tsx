@@ -137,7 +137,7 @@ const CSS = `
 
   .heading-dark {
     display: block;
-    font-size: 52px;
+    font-size: 38px;
     font-weight: 800;
     color: #111827;
     letter-spacing: -1px;
@@ -145,7 +145,7 @@ const CSS = `
 
   .heading-primary {
     display: block;
-    font-size: 52px;
+    font-size: 38px;
     font-weight: 800;
     color: #00b8c4;
     letter-spacing: -1px;

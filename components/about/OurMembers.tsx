@@ -79,7 +79,7 @@ const CSS = `
   .ml-heading {
     margin: 0 0 0 0;
     text-align: center;
-    font-size: 40px;
+    font-size: 38px;
     font-weight: 800;
     color: #E14629;
     letter-spacing: -0.5px;
