@@ -162,9 +162,7 @@ export default function ContactFormSection() {
               <form className="cfs-form" onSubmit={(e) => submit(setCsLoading, setCsDone, e)} noValidate>
                 {/* Emergency notice */}
                 <div className="cfs-emergency">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#F15A40" />
-                  </svg>
+                  <img src="/images/contact-us/contact-form-section/Siren.svg" alt="Siren" style={{ flexShrink: 0, width: "20px", height: "20px" }} />
                   <p><strong>Emergency Claims?</strong> Call our 24/7 claims hotline: <strong className="cfs-phone">1800 - 456 - 7890</strong> for immediate assistance</p>
                 </div>
 
@@ -296,9 +294,7 @@ export default function ContactFormSection() {
           <div className="cfs-office-card">
             <div className="cfs-office-info">
               <div className="cfs-office-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#2145d6" />
-                </svg>
+                <img src="/images/contact-us/contact-form-section/Company.svg" alt="Office Icon" style={{ width: "24px", height: "24px" }} />
               </div>
               <div>
                 <p className="cfs-office-name">Head Office- Kochi</p>
@@ -313,7 +309,7 @@ export default function ContactFormSection() {
             <a href="https://maps.google.com/?q=Changampuzha+Nagar+Kochi" target="_blank" rel="noopener noreferrer" className="cfs-dir-btn">
               Direction
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                <path d="M3 11L11 3M11 3H6M11 3v5" stroke="#2145d6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 11L11 3M11 3H6M11 3v5" stroke="#141B34" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
           </div>
@@ -322,29 +318,16 @@ export default function ContactFormSection() {
             <p className="cfs-social-title">Connect on social</p>
             <div className="cfs-social-links">
               <a href="#" className="cfs-social-btn" aria-label="Facebook">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
-                  <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z" />
-                </svg>
-                Facebook
+                <img src="/images/contact-us/contact-form-section/facebook.svg" alt="Facebook" style={{ width: "43px", height: "43px" }} />
+                <span className="cfs-social-text">Facebook</span>
               </a>
               <a href="#" className="cfs-social-btn" aria-label="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="igG" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#f09433" />
-                      <stop offset="50%" stopColor="#dc2743" />
-                      <stop offset="100%" stopColor="#bc1888" />
-                    </linearGradient>
-                  </defs>
-                  <path fill="url(#igG)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                </svg>
-                Instagram
+                <img src="/images/contact-us/contact-form-section/Instagram.svg" alt="Instagram" style={{ width: "43px", height: "43px" }} />
+                <span className="cfs-social-text">Instagram</span>
               </a>
               <a href="#" className="cfs-social-btn" aria-label="YouTube">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF0000">
-                  <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-                Youtube
+                <img src="/images/contact-us/contact-form-section/youtube.svg" alt="YouTube" style={{ width: "43px", height: "43px" }} />
+                <span className="cfs-social-text">Youtube</span>
               </a>
             </div>
           </div>
@@ -353,7 +336,7 @@ export default function ContactFormSection() {
 
       <style jsx>{`
         .cfs-section {
-          background: #f8f9fc;
+          background: #F8FAFF;
           padding: 72px 24px;
           font-family: "Poppins", sans-serif;
         }
@@ -402,7 +385,8 @@ export default function ContactFormSection() {
           border-radius: 8px;
           margin-bottom: 32px;
           flex-wrap: wrap;
-          width:520px;
+          width: 100%;
+          max-width: 520px;
         }
 
         .cfs-tab {
@@ -522,7 +506,7 @@ export default function ContactFormSection() {
           align-items: center;
           background: #F0F4FF;
           border-left: 4px solid #0A1F6E;
-          border-radius: 4px;
+          border-radius: 12px;
           padding: 16px 20px;
           font-size: 14px;
           color: #111827;
@@ -634,7 +618,7 @@ export default function ContactFormSection() {
 
         .cfs-office-hours {
           font-size: 12px;
-          color: #9ca3af;
+          color: #0A3D91;
           font-weight: 500;
           margin: 0;
         }
@@ -644,9 +628,9 @@ export default function ContactFormSection() {
           align-items: center;
           gap: 5px;
           padding: 7px 14px;
-          border: 1.5px solid #2145d6;
+          border: 1.5px solid #141B34;
           border-radius: 8px;
-          color: #2145d6;
+          color: #141B34;
           font-size: 13px;
           font-weight: 600;
           text-decoration: none;
@@ -657,7 +641,7 @@ export default function ContactFormSection() {
         }
 
         .cfs-dir-btn:hover {
-          background: #2145d6;
+          background: #141B34;
           color: #fff;
         }
 
@@ -680,6 +664,8 @@ export default function ContactFormSection() {
           display: flex;
           gap: 10px;
           flex-wrap: wrap;
+          justify-content: space-between;
+
         }
 
         .cfs-social-btn {
@@ -687,13 +673,13 @@ export default function ContactFormSection() {
           align-items: center;
           gap: 8px;
           padding: 8px 14px;
-          border-radius: 8px;
+          border-radius: 12px;
           font-size: 13px;
           font-weight: 500;
           text-decoration: none;
           border: 1.5px solid #e5e7eb;
           color: #374151;
-          background: #fff;
+          background: #ECF0F9;
           font-family: "Poppins", sans-serif;
           transition: border-color 0.2s, box-shadow 0.2s;
         }
@@ -704,7 +690,7 @@ export default function ContactFormSection() {
         }
 
         /* ── RESPONSIVE ── */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .cfs-inner {
             grid-template-columns: 1fr;
             gap: 40px;
@@ -715,6 +701,26 @@ export default function ContactFormSection() {
           .cfs-heading { font-size: 24px; }
 
           .cfs-social-links { flex-wrap: wrap; }
+        }
+
+        @media (max-width: 640px) {
+          .cfs-social-title {
+            display: none;
+          }
+          .cfs-social-text {
+            display: none;
+          }
+          .cfs-tabs {
+            flex-wrap: nowrap;
+            padding: 4px;
+            gap: 2px;
+          }
+          .cfs-tab {
+            flex: 1;
+            padding: 8px 4px;
+            font-size: 11px;
+            white-space: nowrap;
+          }
         }
       `}</style>
     </section>
