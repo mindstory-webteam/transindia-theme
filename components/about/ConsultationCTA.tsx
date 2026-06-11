@@ -81,7 +81,7 @@ export default function ConsultationCTA() {
         }
 
         .cta-heading {
-          font-family: "Poppins", sans-serif;
+          font-family: var(--font-sora), "Sora", sans-serif;
           font-size: clamp(26px, 4vw, 36px);
           font-weight: 800;
           color: #ffffff;

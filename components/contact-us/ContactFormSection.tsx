@@ -366,7 +366,8 @@ export default function ContactFormSection() {
 
         /* ── HEADING ── */
         .cfs-heading {
-          font-size: 30px;
+          font-family: var(--font-sora), "Sora", sans-serif;
+          font-size: 38px;
           font-weight: 800;
           color: #111827;
           margin: 0 0 24px 0;
@@ -640,10 +641,7 @@ export default function ContactFormSection() {
           margin-top: 4px;
         }
 
-        .cfs-dir-btn:hover {
-          background: #141B34;
-          color: #fff;
-        }
+      
 
         /* ── SOCIAL CARD ── */
         .cfs-social-card {
