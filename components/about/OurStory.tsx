@@ -288,7 +288,7 @@ const CSS = `
 
   @media (max-width: 768px) {
     .our-story-section { padding: 130px 20px 60px; }
-    .our-story-container { padding: 0 20px; }
+    .our-story-container { padding:130px 20px 0px 20px; }
     .heading-dark, .heading-primary { font-size: 32px; }
     .check-items-grid { grid-template-columns: 1fr; }
     .cards-grid { grid-template-columns: 1fr; }

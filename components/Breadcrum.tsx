@@ -62,14 +62,11 @@ export default function Breadcrum({
             </div>
           </div>
 
-          {/* ── Visual side — banner image ── */}
-          <div className="bc-visual">
-            <img
-              src="/images/about/aboutus-banner1.png"
-              alt="About TransIndia"
-              className="bc-banner-img"
-            />
+          {/* ── Mobile visual (only visible on small screens) ── */}
+          <div className="bc-mobile-visual">
+            <img src="/images/about/about-us-sm-banner1.png" alt="About TransIndia" />
           </div>
+
         </div>
 
         {/* ── Stats bar ── */}
@@ -97,7 +94,7 @@ export default function Breadcrum({
 const CSS = `
   /* ── Hero section ── */
   .bc-hero {
-    background:#001250;
+    background: url('/images/about/aboutus-banner1.png') center/cover no-repeat;
     position: relative;
     overflow: visible; /* allow stats card to bleed out */
     padding-top: 150px; /* offset for fixed navbar */
@@ -108,12 +105,12 @@ const CSS = `
 
 
   .bc-inner {
-    max-width: 1380px;
+    max-width: 1450px;
     margin: 0 auto;
     padding: 0 32px;
     display: flex;
     align-items: center;
-    min-height: 400px;
+    min-height: 535px;
     position: relative;
     z-index: 2;
   }
@@ -121,7 +118,7 @@ const CSS = `
   /* ── Breadcrumb trail ── */
   .bc-trail {
     position: absolute;
-    top: 20px;
+    top: 40px;
     left: 32px;
     display: flex;
     align-items: center;
@@ -156,7 +153,6 @@ const CSS = `
   /* ── Hero content (left) ── */
   .bc-content {
     flex: 0 0 52%;
-    padding-top: 60px;
     padding-bottom: 48px;
   }
 
@@ -213,7 +209,6 @@ const CSS = `
   }
 
 
-  /* ── Visual side — banner image ── */
   .bc-visual {
     flex: 1;
     display: flex;
@@ -221,6 +216,10 @@ const CSS = `
     align-items: flex-end;
     position: relative;
     overflow: hidden;
+  }
+
+  .bc-mobile-visual {
+    display: none;
   }
 
   .bc-banner-img {
@@ -246,7 +245,7 @@ const CSS = `
     left: 50%;
     transform: translate(-50%, 50%);
     width: calc(100% - 64px);
-    max-width: 1230px;
+    max-width: 1300px;
     z-index: 20;
   }
 
@@ -291,20 +290,55 @@ const CSS = `
     .bc-visual { display: none; }
     .bc-content { flex: 1; }
     .bc-title { font-size: 32px; }
+
+    .bc-stats-inner {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px 16px;
+    }
+    .bc-stat + .bc-stat { border-left: none; }
+    .bc-stat { border-bottom: 1px solid #e8ecf4; padding-bottom: 24px; }
+    .bc-stat:nth-child(3), .bc-stat:nth-child(4) { border-bottom: none; padding-bottom: 0; }
+    .bc-stat:nth-child(even) { border-left: 1px solid #e8ecf4; padding-left: 16px; }
   }
 
   @media (max-width: 600px) {
-    .bc-inner { padding: 0 20px; min-height: 340px; }
+    .bc-hero { background: #001250; }
+    .bc-inner { 
+      padding: 0 20px; 
+      min-height: auto; 
+      flex-direction: column; 
+      align-items: flex-start; 
+    }
+    .bc-trail { display: none; }
+    .bc-content {  padding-bottom: 20px; width: 100%; }
     .bc-title { font-size: 26px; }
+    
+    .bc-btns { flex-direction: column; width: 100%; }
+    .bc-btn-orange, .bc-btn-ghost { width: 100%; justify-content: center; }
+
+    .bc-mobile-visual {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      padding-bottom: 140px; 
+    }
+    .bc-mobile-visual img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
     .bc-stats-bar { width: calc(100% - 32px); }
+    
     .bc-stats-inner {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 20px;
-      gap: 16px;
+      grid-template-columns: 1fr;
+      padding: 24px 20px;
+      gap: 20px;
       border-radius: 12px;
     }
-    .bc-stat + .bc-stat { border-left: none; }
-    .bc-stat:nth-child(2n) { border-left: 1px solid #e8ecf4; }
+    .bc-stat { border-left: none !important; padding-left: 0 !important; border-bottom: 1px solid #e8ecf4; padding-bottom: 20px; }
+    .bc-stat:last-child { border-bottom: none; padding-bottom: 0; }
   }
 
   @media (prefers-reduced-motion: reduce) {
