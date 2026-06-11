@@ -154,7 +154,7 @@ const CSS = `
 
   /* ── Inner layout ── */
   .nav-inner {
-    max-width: 1280px;
+    max-width: 1480px;
     margin: 0 auto;
     padding: 0 32px;
     height: 68px;

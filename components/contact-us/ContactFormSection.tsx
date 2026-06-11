@@ -318,15 +318,15 @@ export default function ContactFormSection() {
             <p className="cfs-social-title">Connect on social</p>
             <div className="cfs-social-links">
               <a href="#" className="cfs-social-btn" aria-label="Facebook">
-                <img src="/images/contact-us/contact-form-section/facebook.svg" alt="Facebook" style={{ width: "43px", height: "43px" }} />
+                <img src="/images/contact-us/contact-form-section/facebook.svg" alt="Facebook" style={{ width: "33px", height: "33px" }} />
                 <span className="cfs-social-text">Facebook</span>
               </a>
               <a href="#" className="cfs-social-btn" aria-label="Instagram">
-                <img src="/images/contact-us/contact-form-section/Instagram.svg" alt="Instagram" style={{ width: "43px", height: "43px" }} />
+                <img src="/images/contact-us/contact-form-section/Instagram.svg" alt="Instagram" style={{ width: "33px", height: "33px" }} />
                 <span className="cfs-social-text">Instagram</span>
               </a>
               <a href="#" className="cfs-social-btn" aria-label="YouTube">
-                <img src="/images/contact-us/contact-form-section/youtube.svg" alt="YouTube" style={{ width: "43px", height: "43px" }} />
+                <img src="/images/contact-us/contact-form-section/youtube.svg" alt="YouTube" style={{ width: "33px", height: "33px" }} />
                 <span className="cfs-social-text">Youtube</span>
               </a>
             </div>
@@ -337,7 +337,7 @@ export default function ContactFormSection() {
       <style jsx>{`
         .cfs-section {
           background: #F8FAFF;
-          padding: 72px 24px;
+          padding: 220px 24px 72px 24px;
           font-family: "Poppins", sans-serif;
         }
 
@@ -682,10 +682,7 @@ export default function ContactFormSection() {
           transition: border-color 0.2s, box-shadow 0.2s;
         }
 
-        .cfs-social-btn:hover {
-          border-color: #9ca3af;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        }
+       
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
