@@ -45,27 +45,38 @@ export default function ContactHero() {
   return (
     <>
       <style>{CSS}</style>
-      <section className="contact-hero">
-        <div className="contact-inner">
-          <div className="contact-trail-wrapper">
-            <Breadcrum crumbs={[{ label: "Home", href: "/" }, { label: "Contact Us" }]} />
-          </div>
+      <div className="contact-hero-wrapper">
+        <section className="contact-hero">
+          <div className="contact-inner">
+            <div className="contact-trail-wrapper">
+              <Breadcrum crumbs={[{ label: "Home", href: "/" }, { label: "Contact Us" }]} />
+            </div>
 
-          <div className="contact-content">
-            <h1 className="contact-title">
-              We&apos;re here,
-              <br />
-              <span style={{ color: "#F15A40" }}>whenever you</span>{" "}
-              <span style={{ color: "#20BEC6" }}>need us</span>
-            </h1>
-            <p className="contact-desc">
-              Have a question, want expert advice, or need help with a claim? Our team
-              is available 7 days a week — call, chat, or visit us.
-            </p>
-          </div>
-        </div>
+            <div className="contact-content">
+              <h1 className="contact-title">
+                We&apos;re here,
+                <br />
+                <span style={{ color: "#F15A40" }}>whenever you</span>{" "}
+                <span style={{ color: "#20BEC6" }}>need us</span>
+              </h1>
+              <p className="contact-desc">
+                Have a question, want expert advice, or need help with a claim? Our team
+                is available 7 days a week — call, chat, or visit us.
+              </p>
+            </div>
 
-        {/* ── Contact Cards bar ── */}
+            {/* ── Small-screen banner image ── */}
+            <div className="contact-sm-banner">
+              <img
+                src="/images/contact-us/contact-us-small-banner1.png"
+                alt="Contact us banner"
+                className="contact-sm-banner-img"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ── Contact Cards bar (outside section so hero bg doesn't bleed onto cards) ── */}
         <div className="contact-cards-bar">
           <div className="contact-cards-inner">
             {contactCards.map((card) => (
@@ -94,12 +105,18 @@ export default function ContactHero() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }
 
 const CSS = `
+  /* ── Wrapper: positioning context for desktop cards bar ── */
+  .contact-hero-wrapper {
+    position: relative;
+    overflow: visible;
+  }
+
   .contact-hero {
     background: url('/images/contact-us/contact-usbanner1.png') center/cover no-repeat;
     position: relative;
@@ -148,7 +165,7 @@ const CSS = `
     margin: 0;
   }
 
-  /* ── Cards bar ── */
+  /* ── Cards bar: anchored to wrapper bottom = section bottom on desktop ── */
   .contact-cards-bar {
     position: absolute;
     bottom: 0;
@@ -242,8 +259,17 @@ const CSS = `
     .contact-title { font-size: 32px; }
   }
 
+  /* ── Small-screen banner: hidden by default ── */
+  .contact-sm-banner {
+    display: none;
+  }
+
   @media (max-width: 600px) {
-    .contact-hero { padding-top: 100px; }
+    .contact-hero {
+      padding-top: 100px;
+      padding-bottom: 24px;
+      overflow: visible;
+    }
     .contact-inner {
       padding: 0 20px;
       min-height: auto;
@@ -251,22 +277,66 @@ const CSS = `
       align-items: flex-start;
     }
     .contact-trail-wrapper { display: none; }
-    .contact-content { padding-bottom: 20px; width: 100%; }
+    .contact-content { padding-bottom: 16px; width: 100%; }
     .contact-title { font-size: 28px; }
 
-    .contact-cards-bar { width: calc(100% - 32px); }
+    /* Show the small-screen banner between content and cards */
+    .contact-sm-banner {
+      display: block;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+      margin-top: 8px;
+    }
+    .contact-sm-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Mobile: pull cards bar up so first card half-overlaps the banner */
+    .contact-cards-bar {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      width: 100%;
+      max-width: 100%;
+      margin-top: -110px;   /* pulls first card up ~half its height into banner */
+      padding: 0 16px;
+      box-sizing: border-box;
+      z-index: 10;
+    }
     .contact-cards-inner {
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      gap: 12px;
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      overflow: visible;
     }
     .contact-card {
-      padding: 20px 12px;
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: auto;
+      padding: 28px 24px;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(10, 31, 110, 0.10), 0 1px 6px rgba(0,0,0,0.06);
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      border-bottom: none;
+      background: #fff;
     }
-    .contact-card:nth-child(odd) {
-      border-right: 1px solid #e8ecf4;
-    }
-    .contact-card:nth-child(1),
-    .contact-card:nth-child(2) {
-      border-bottom: 1px solid #e8ecf4;
-    }
+    .contact-card:last-child { border-bottom: none; }
+    .contact-card-icon { margin-bottom: 6px; }
+    .contact-card-label { font-size: 16px; }
+    .contact-card-sub   { font-size: 13px; }
   }
 `;

@@ -31,7 +31,6 @@ const companyLinks = [
   "Become a PoSP",
   "Corporate solutions",
   "Careers",
-  "Blog",
 ];
 
 const supportLinks = [

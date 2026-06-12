@@ -699,6 +699,12 @@ export default function ContactFormSection() {
         }
 
         @media (max-width: 640px) {
+          .cfs-section {
+            padding: 72px 16px 48px 16px;
+          }
+          .cfs-inner {
+            gap: 34px;
+          }
           .cfs-social-title {
             display: none;
           }
