@@ -172,7 +172,7 @@ const CSS = `
     padding: 0 32px;
     display: grid;
     grid-template-columns: 1fr 580px;
-    gap: 28px;
+    gap: 40px;
     align-items: start;
     position: relative;
     z-index: 2;
@@ -233,7 +233,6 @@ const CSS = `
     border: 1px solid rgba(255,255,255,0.08);
     transition: opacity 0.18s, transform 0.15s;
   }
-  .clh-card:hover { opacity: 0.88; transform: translateY(-1px); }
 
   .clh-card--call  { background: #12235A; color:#B5C1DA;  }
   .clh-card--dark  { background: #12235A; color:#B5C1DA; }
@@ -244,7 +243,6 @@ const CSS = `
     cursor: default;
     align-items: flex-start;
   }
-  .clh-card--warn:hover { opacity: 1; transform: none; }
 
   .clh-card-icon {
     width: 42px;
@@ -381,44 +379,79 @@ const CSS = `
     box-shadow: 0 4px 14px rgba(26,122,71,0.35);
     width: 100%;
   }
-  .clh-submit:hover {
-    background: #15633b;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(26,122,71,0.45);
+
+
+  /* ── 1400px (xl) ── */
+  @media (max-width: 1400px) {
+    .clh-inner { grid-template-columns: 1fr 520px; gap: 32px; }
   }
 
   /* ── 1200px ── */
   @media (max-width: 1200px) {
-    .clh-inner { grid-template-columns: 1fr 360px; gap: 36px; }
+    .clh-inner { grid-template-columns: 1fr 440px; gap: 28px; }
     .clh-title { font-size: 44px; }
+    .clh-desc { max-width: 100%; }
   }
 
   /* ── 1024px ── */
   @media (max-width: 1024px) {
-    .clh-inner { grid-template-columns: 1fr 330px; gap: 28px; }
+    .clh-section { padding-top: 130px; padding-bottom: 60px; }
+    .clh-inner { grid-template-columns: 1fr 380px; gap: 24px; padding: 0 24px; }
     .clh-title { font-size: 38px; }
+    .clh-form-wrap { padding: 28px 22px; }
   }
 
-  /* ── 900px: stack ── */
+  /* ── 900px: stack vertically ── */
   @media (max-width: 900px) {
-    .clh-inner { grid-template-columns: 1fr; gap: 36px; }
+    .clh-section { padding-top: 110px; padding-bottom: 48px; }
+    .clh-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
     .clh-title { font-size: 34px; }
     .clh-bento { max-width: 100%; }
     .clh-form-wrap { position: static; padding: 28px 24px; }
+    .clh-card-row { grid-template-columns: 1fr 1fr; }
   }
 
-  /* ── 600px: mobile ── */
+  /* ── 768px (narrow tablet) ── */
+  @media (max-width: 768px) {
+    .clh-section { padding-top: 105px; }
+    .clh-inner { padding: 0 20px; gap: 28px; }
+    .clh-title { font-size: 30px; }
+    .clh-desc { font-size: 14px; }
+    .clh-form-title { font-size: 18px; }
+    .clh-form-wrap { padding: 24px 20px; border-radius: 18px; }
+    .clh-row { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── 600px (mobile) ── */
   @media (max-width: 600px) {
     .clh-section { padding-top: 100px; padding-bottom: 32px; background: #0b1240; }
-    .clh-inner { padding: 0 20px; gap: 28px; }
+    .clh-inner { padding: 0 16px; gap: 40px; }
     .clh-trail-wrapper { display: none; }
-    .clh-title { font-size: 28px; }
-    .clh-desc { font-size: 14px; margin-bottom: 20px; }
-    .clh-card-row { grid-template-columns: 1fr 1fr; }
-    .clh-card { padding: 14px 14px; }
-    .clh-card-value { font-size: 13px; }
+    .clh-title { font-size: 26px; letter-spacing: -0.3px; }
+    .clh-desc { font-size: 13.5px; margin-bottom: 18px; }
+
+    /* Bento: keep 2-col for row-2 cards, collapse important card */
+    .clh-bento { gap: 8px; padding-top: 20px; }
+    .clh-card-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .clh-card { padding: 12px 12px; gap: 10px; border-radius: 12px; }
+    .clh-card-icon { width: 36px; height: 36px; }
+    .clh-card-label { font-size: 10px; }
+    .clh-card-value { font-size: 12px; }
+    .clh-card-warn-text { font-size: 12px; }
+
+    /* Form */
+    .clh-form-wrap { padding: 40px 16px 20px 16px; border-radius: 16px; }
+    .clh-form-title { font-size: 16px; margin-bottom: 16px; }
+    .clh-form { gap: 10px; }
     .clh-row { grid-template-columns: 1fr; }
-    .clh-form-wrap { padding: 22px 16px; border-radius: 16px; }
-    .clh-form-title { font-size: 17px; }
+    .clh-input { padding: 8px 11px; font-size: 12.5px; }
+    .clh-label { font-size: 11.5px; }
+  }
+
+  /* ── 400px (xs phones) ── */
+  @media (max-width: 400px) {
+    .clh-title { font-size: 22px; }
+    .clh-card-row { grid-template-columns: 1fr; }
+    .clh-card-value { font-size: 11px; }
   }
 `;

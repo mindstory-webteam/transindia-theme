@@ -176,7 +176,7 @@ const TransindiaFooter: React.FC = () => {
         {/* ── Bottom bar ── */}
         <div className="tf-bottom">
           <p style={{ margin: 0, fontSize: 11, color: "#6b7280" }}>
-            © 2025 Transindia Insurance Broking Pvt. Ltd. All rights reserved.
+            © 2026 Transindia Insurance Broking Pvt. Ltd. All rights reserved.
           </p>
           <div className="tf-bottom-links">
             {bottomLinks.map((link) => (
