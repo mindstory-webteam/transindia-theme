@@ -686,6 +686,9 @@ export default function ContactFormSection() {
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
+          .cfs-section {
+            padding-top: 280px;
+          }
           .cfs-inner {
             grid-template-columns: 1fr;
             gap: 40px;

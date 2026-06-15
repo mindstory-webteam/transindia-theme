@@ -34,7 +34,7 @@ export default function AboutHero() {
           </div>
         </div>
 
-        {/* ── Stats bar ── */}
+        {/* ── .contact-lg-banner  ── */}
         <div className="about-stats-bar">
           <div className="about-stats-inner">
             {[
@@ -188,9 +188,53 @@ const CSS = `
     font-weight: 500;
   }
 
-  @media (max-width: 900px) {
-    .about-content { flex: 1; }
-    .about-title { font-size: 32px; }
+  /* ── iPad Pro & Mini / tablets (≤1024px): side-by-side layout ── */
+  @media (max-width: 1024px) {
+    .about-hero {
+      background: linear-gradient(135deg, #0b1240 60%, #0d1e6e 100%);
+      padding-top: 110px;
+      padding-bottom: 60px;
+      overflow: visible;
+    }
+    .about-inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 400px;
+      padding: 0 28px;
+    }
+
+    /* Breadcrumb */
+    .about-trail-wrapper {
+      position: absolute;
+      top: -30px;
+      left: 28px;
+    }
+
+    .about-content { 
+      flex: 0 0 50%; 
+      padding-bottom: 60px; 
+      text-align: left; 
+    }
+    .about-title { font-size: 34px; }
+    .about-desc { max-width: 100%; margin-bottom: 24px; margin-left: 0; }
+    .about-btns { justify-content: flex-start; }
+
+    .about-mobile-visual {
+      display: block;
+      flex: 0 0 45%;
+      text-align: right;
+      padding-bottom: 60px;
+      margin-top: 0;
+    }
+    .about-mobile-visual img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .about-stats-bar { width: calc(100% - 48px); }
 
     .about-stats-inner {
       grid-template-columns: repeat(2, 1fr);

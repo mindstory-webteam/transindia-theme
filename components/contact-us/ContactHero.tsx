@@ -65,6 +65,15 @@ export default function ContactHero() {
               </p>
             </div>
 
+            {/* ── Large-screen banner image ── */}
+            <div className="contact-lg-banner">
+              <img
+                src="/images/contact-us/customer-service-representative-lg-screen.png"
+                alt="Contact us representative"
+                className="contact-lg-banner-img"
+              />
+            </div>
+
             {/* ── Small-screen banner image ── */}
             <div className="contact-sm-banner">
               <img
@@ -118,7 +127,7 @@ const CSS = `
   }
 
   .contact-hero {
-    background: url('/images/contact-us/contact-usbanner1.png') center/cover no-repeat;
+    background: #00124C;
     position: relative;
     overflow: visible;
     padding-top: 150px;
@@ -243,8 +252,29 @@ const CSS = `
     margin: 0;
   }
 
+  /* ── Large-screen banner ── */
+  .contact-lg-banner {
+    position: absolute;
+    right: 12%; /* Aligns it roughly in the middle of the 2 right cards */
+    bottom: -90px; /* Adjust to let it peek out/sit under cards */
+    width: 400px; /* Adjust size as needed */
+    pointer-events: none;
+    z-index: 1;
+  }
+  .contact-lg-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   /* ── Responsive ── */
   @media (max-width: 1024px) {
+    .contact-lg-banner {
+      display: none;
+    }
+    .contact-hero {
+      background: #0b1240;
+    }
     .contact-cards-inner {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -263,6 +293,31 @@ const CSS = `
   /* ── Small-screen banner: hidden by default ── */
   .contact-sm-banner {
     display: none;
+  }
+
+  /* ── iPad Mini & Pro (601px–1024px): show lady image on the right ── */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .contact-hero {
+      overflow: hidden;
+      background: #0b1240;
+    }
+    .contact-sm-banner {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 42%;
+      max-width: 420px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .contact-sm-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: bottom right;
+    }
   }
 
   @media (max-width: 600px) {
