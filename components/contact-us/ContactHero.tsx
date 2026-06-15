@@ -256,7 +256,7 @@ const CSS = `
   .contact-lg-banner {
     position: absolute;
     right: 12%; /* Aligns it roughly in the middle of the 2 right cards */
-    bottom: -90px; /* Adjust to let it peek out/sit under cards */
+    bottom: -20px; /* Adjust to let it peek out/sit under cards */
     width: 400px; /* Adjust size as needed */
     pointer-events: none;
     z-index: 1;
