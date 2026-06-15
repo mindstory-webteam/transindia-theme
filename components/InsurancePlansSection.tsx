@@ -46,22 +46,22 @@ const PLANS = [
 const TRUST_ITEMS = [
   {
     label:    "24/7\nClaim Assistance",
-    imageSrc: "/images/icons/claim-assistance.png",
+    imageSrc: "/images/section-3/customer-support.svg",
     imageAlt: "24/7 Claim Assistance",
   },
   {
     label:    "Trusted\nCoverage",
-    imageSrc: "/images/icons/trusted-coverage.png",
+    imageSrc: "/images/section-3/knight-shield.svg",
     imageAlt: "Trusted Coverage",
   },
   {
     label:    "Fast\nApprovals",
-    imageSrc: "/images/icons/fast-approvals.png",
+    imageSrc: "/images/section-3/timer-02.svg",
     imageAlt: "Fast Approvals",
   },
   {
     label:    "Personalized\nPlans",
-    imageSrc: "/images/icons/personalized-plans.png",
+    imageSrc: "/images/section-3/user.svg",
     imageAlt: "Personalized Plans",
   },
 ];
@@ -150,7 +150,7 @@ export default function InsurancePlansSection() {
             {/* Left: shield image + text */}
             <div className="ips-banner-left">
               <img
-                src="/images/shield-check.png"
+                src="/images/section-3/magnific_create-a-clean-3d-shield-_cDOaj6u0eP.png"
                 alt="Protection shield"
                 className="ips-banner-shield"
               />
