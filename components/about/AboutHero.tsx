@@ -32,6 +32,10 @@ export default function AboutHero() {
           <div className="about-mobile-visual">
             <img src="/images/about/about-us-sm-banner1.png" alt="About TransIndia" />
           </div>
+
+          <div className="about-lg-banner">
+            <img src="/images/about/about-us-hero-lg.png" alt="About TransIndia Banner" />
+          </div>
         </div>
 
         {/* ── .contact-lg-banner  ── */}
@@ -57,7 +61,7 @@ export default function AboutHero() {
 
 const CSS = `
   .about-hero {
-    background: url('/images/about/aboutus-banner1.png') center/cover no-repeat;
+    background: #001350;
     position: relative;
     overflow: visible; 
     padding-top: 150px; 
@@ -83,6 +87,8 @@ const CSS = `
   }
 
   .about-content {
+    position: relative;
+    z-index: 10;
     flex: 0 0 52%;
     padding-bottom: 48px;
   }
@@ -142,6 +148,24 @@ const CSS = `
     display: none;
   }
 
+  .about-lg-banner {
+    position: absolute;
+    right: 0;
+    bottom: -60px; /* peek under the stats bar */
+    width: 55%;
+    max-width: 680px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .about-lg-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: bottom right;
+  }
+
   .about-stats-bar {
     position: absolute;
     bottom: 0;
@@ -190,6 +214,9 @@ const CSS = `
 
   /* ── iPad Pro & Mini / tablets (≤1024px): side-by-side layout ── */
   @media (max-width: 1024px) {
+    .about-lg-banner {
+      display: none;
+    }
     .about-hero {
       background: #001250;
       padding-top: 110px;
