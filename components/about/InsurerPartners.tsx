@@ -48,7 +48,7 @@ export default function InsurerPartners() {
 const CSS = `
   .ip-section {
     background-color: #ffffff;
-    padding: 72px 20px 88px;
+    padding: 30px 62px 50px 88px;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
