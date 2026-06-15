@@ -42,7 +42,7 @@ const processSteps: ProcessStep[] = [
 export default function ClaimsProcessSection() {
   return (
     <section className="bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-400 px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <span className="mb-4 inline-flex items-center rounded-full bg-cyan-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#158693]">
@@ -66,7 +66,7 @@ export default function ClaimsProcessSection() {
               key={item.step}
               className={`relative pt-[10px]${idx === 4 ? " col-span-2" : ""}`}
             >
-              <div className="absolute left-1/2 -translate-x-1/2 top-0 z-10 flex items-center justify-center w-[129px] h-[41px]">
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 z-10 flex items-center justify-center w-32.25 h-10.25">
                 <svg width="129" height="41" viewBox="0 0 129 41" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0">
                   <path d="M0 4C0 1.79086 1.79086 0 4 0H125C127.209 0 129 1.79086 129 4V17C129 30.2548 118.255 41 105 41H24C10.7452 41 0 30.2548 0 17V4Z" fill="#F15A40"/>
                 </svg>
@@ -74,7 +74,7 @@ export default function ClaimsProcessSection() {
                   {item.step}
                 </span>
               </div>
-              <div className={`flex flex-col rounded-[20px] bg-[#0c1a4a] px-6 pt-[70px] pb-6 h-[189px] ${idx === 4 ? "w-full" : "w-full"}`}>
+              <div className={`flex flex-col rounded-[20px] bg-[#0c1a4a] px-6 pt-17.5 pb-6 h-47.25 ${idx === 4 ? "w-full" : "w-full"}`}>
                 <h3 className="text-[17px] font-bold text-white">
                   {item.title}
                 </h3>
@@ -89,8 +89,8 @@ export default function ClaimsProcessSection() {
         {/* lg+: original 5-in-a-row flex layout */}
         <div className="hidden lg:flex flex-wrap justify-center gap-5 mt-10">
           {processSteps.map((item) => (
-            <div key={item.step} className="relative pt-[10px]">
-              <div className="absolute left-1/2 -translate-x-1/2 top-0 z-10 flex items-center justify-center w-[129px] h-[41px]">
+            <div key={item.step} className="relative pt-2.5">
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 z-10 flex items-center justify-center w-32.25 h-10.25">
                 <svg width="129" height="41" viewBox="0 0 129 41" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0">
                   <path d="M0 4C0 1.79086 1.79086 0 4 0H125C127.209 0 129 1.79086 129 4V17C129 30.2548 118.255 41 105 41H24C10.7452 41 0 30.2548 0 17V4Z" fill="#F15A40"/>
                 </svg>

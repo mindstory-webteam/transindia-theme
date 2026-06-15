@@ -43,7 +43,7 @@ export default function ClaimsFaqSection() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-10 text-center">
-          <span className="mb-4 inline-flex items-center rounded-full bg-orange-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-orange-500">
+          <span className="mb-4 inline-flex items-center rounded-full bg-orange-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#B74E3B]">
             Common questions
           </span>
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl" style={{ fontFamily: 'var(--font-sora), "Sora", sans-serif' }}>
