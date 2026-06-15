@@ -204,7 +204,7 @@ const CSS = `
   .ips-section {
     background: linear-gradient(109deg, #FFE9E5 0%, #B2F6FF 150%);
     padding: clamp(60px, 8vw, 100px) 0 clamp(64px, 9vw, 108px);
-    font-family: 'Plus Jakarta Sans', sans-serif;
+     font-family: var(--font-sora), "Sora", sans-serif;
   }
 
   .ips-container {
@@ -226,7 +226,7 @@ const CSS = `
   .ips-heading { flex: 1; min-width: 260px; }
 
   .ips-title {
-    font-size: clamp(26px, 3.8vw, 48px);
+    font-size: clamp(26px, 3.8vw, 38px);
     font-weight: 900;
     color: #111827;
     line-height: 1.15;

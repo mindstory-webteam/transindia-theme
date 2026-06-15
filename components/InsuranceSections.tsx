@@ -163,7 +163,7 @@ function AdvisorSection() {
         {/* LEFT TEXT */}
         <div style={s.textBlock}>
           <span style={s.pillGray}>EXPERT ADVICE , FREE</span>
-          <h2 style={s.heading}>
+          <h2 style={s.heading} >
             Advisors who listen<br />
             first, <span style={s.accentBlue}>sell second</span>
           </h2>
@@ -321,7 +321,7 @@ export default function InsuranceSections() {
     <>
       <style>{RESPONSIVE_CSS}</style>
       <main style={{
-        fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
+        fontFamily: "'Sora', sans-serif",
         color: "#1E293B",
         background: "#FFFFFF",
         width: "100%",
@@ -492,7 +492,7 @@ const s: Record<string, React.CSSProperties> = {
   },
 
   heading: {
-    fontSize: "clamp(26px, 3.2vw, 42px)",
+    fontSize: "clamp(26px, 3.2vw, 38px)",
     fontWeight: 800,
     lineHeight: 1.15,
     color: "#1E293B",

@@ -111,7 +111,7 @@ const RESPONSIVE_CSS = `
     padding: clamp(48px, 8vw, 96px) clamp(16px, 5vw, 48px);
     box-sizing: border-box;
     background: #FFFFFF;
-    font-family: 'DM Sans', 'Segoe UI', sans-serif;
+    font-family: var(--font-sora), "Sora", sans-serif;
   }
 
   .tm-header {
@@ -163,7 +163,7 @@ const RESPONSIVE_CSS = `
 
 // ─── Styles ──────────────────────────────────────────────────────────────────
 const heading: React.CSSProperties = {
-  fontSize: "clamp(28px, 4vw, 52px)",
+  fontSize: "clamp(28px, 4vw, 38px)",
   fontWeight: 800,
   lineHeight: 1.15,
   letterSpacing: "-0.02em",

@@ -159,7 +159,7 @@ export default function Banner() {
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800;1,900&display=swap');
-        .ins-root *{box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+        .ins-root *{box-sizing:border-box;font-family: var(--font-sora), "Sora", sans-serif;}
 
         @keyframes pulseDot{
           0%,100%{box-shadow:0 0 4px #4ADE80}
@@ -317,11 +317,11 @@ export default function Banner() {
             {/* LEFT */}
             <div className="ins-left" style={{flex:"0 0 44%",maxWidth:530,paddingBottom:80}}>
               <h1 style={{
-                fontSize:"clamp(28px,3.6vw,52px)", fontWeight:900, color:"#fff",
+                fontSize:"clamp(28px,3.6vw,54px)", fontWeight:900, color:"#fff",
                 lineHeight:1.12, margin:"0 0 20px", letterSpacing:"-0.5px",
               }}>
                 Protection for<br />
-                <span style={{color:"#F4622A",fontStyle:"italic"}}>Every </span>
+                <span style={{color:"#F4622A",}}>Every </span>
                 <span style={{color:"#38BDF8"}}>stage of life.</span>
               </h1>
               <p style={{fontSize:15,color:"rgba(255,255,255,0.64)",lineHeight:1.8,margin:"0 0 36px",maxWidth:460}}>

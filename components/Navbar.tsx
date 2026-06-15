@@ -133,7 +133,7 @@ const CSS = `
     left: 0;
     right: 0;
     z-index: 200;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+     font-family: var(--font-sora), "Sora", sans-serif;
 
     background: transparent;
     border-bottom: 1px solid transparent;
