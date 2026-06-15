@@ -139,6 +139,7 @@ const CSS = `
     text-align: center;
     font-size: 38px;
     font-weight: 800;
+    font-family: var(--font-sora), "Sora", sans-serif;
     color: #111827;
     letter-spacing: -0.5px;
     line-height: 1.15;

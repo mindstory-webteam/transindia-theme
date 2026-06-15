@@ -66,8 +66,8 @@ const CSS = `
 
   .ml-badge {
     display: inline-block;
-    background-color: #e0f9f9;
-    color: #00b8c4;
+    background-color:#E0F7FA;
+    color:#158693;
     font-size: 10.5px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -78,6 +78,7 @@ const CSS = `
 
   .ml-heading {
     margin: 0 0 0 0;
+    font-family: var(--font-sora), "Sora", sans-serif;
     text-align: center;
     font-size: 38px;
     font-weight: 800;
@@ -162,7 +163,7 @@ const CSS = `
   @media (max-width: 768px) {
     .ml-section { padding: 56px 20px 64px; }
     .ml-container { padding: 0 24px; }
-    .ml-heading { font-size: 30px; }
+    .ml-heading { font-size: 30px; font-family: var(--font-sora), "Sora", sans-serif;}
     .ml-grid { grid-template-columns: repeat(2, 1fr); column-gap: 14px; row-gap: 72px; }
     .ml-info { min-width: 0; width: 100%; white-space: normal; padding: 8px 14px 9px; }
   }

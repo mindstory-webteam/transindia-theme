@@ -132,6 +132,7 @@ const CSS = `
 
   .our-story-heading {
     margin: 0 0 48px 0;
+    font-family: var(--font-sora), "Sora", sans-serif;
     line-height: 1.1;
   }
 

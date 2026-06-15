@@ -151,6 +151,7 @@ const CSS = `
   .contact-title {
     font-size: 55px;
     font-weight: 800;
+    font-family: var(--font-sora), "Sora", sans-serif;
     color: #fff;
     line-height: 1.15;
     margin: 0 0 14px 0;
