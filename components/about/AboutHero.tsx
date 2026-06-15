@@ -151,7 +151,7 @@ const CSS = `
   .about-lg-banner {
     position: absolute;
     right: 0;
-    bottom: -60px; /* peek under the stats bar */
+    bottom: -80px; /* peek under the stats bar */
     width: 55%;
     max-width: 680px;
     z-index: 1;

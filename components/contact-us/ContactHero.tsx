@@ -148,7 +148,7 @@ const CSS = `
 
   .contact-trail-wrapper {
     position: absolute;
-    top: 40px;
+    top: 10px;
     left: 32px;
   }
 
@@ -268,6 +268,15 @@ const CSS = `
   }
 
   /* ── Responsive ── */
+  @media (min-width: 1025px) {
+    .contact-hero {
+      padding-bottom: 0px;
+    }
+    .contact-inner {
+      min-height: 460px;
+    }
+  }
+
   @media (max-width: 1024px) {
     .contact-lg-banner {
       display: none;
