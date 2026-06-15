@@ -337,7 +337,7 @@ export default function ContactFormSection() {
       <style jsx>{`
         .cfs-section {
           background: #F8FAFF;
-          padding: 220px 24px 72px 24px;
+          padding: 180px 24px 72px 24px;
           font-family: "Poppins", sans-serif;
         }
 
