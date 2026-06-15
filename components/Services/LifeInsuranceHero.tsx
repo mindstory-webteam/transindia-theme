@@ -425,14 +425,7 @@ const CSS = `
       margin-bottom: 36px;
     }
     .li-stats{
-      gap: 12px 0;
-    }
-    .li-stat-item{
-      padding-right: 16px;
-      gap: 16px;
-    }
-    .li-stat-value{
-      font-size: 22px;
+      display: none;
     }
     .li-card{
       padding: 24px 20px;
