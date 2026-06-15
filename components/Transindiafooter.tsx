@@ -208,7 +208,7 @@ const RESPONSIVE_CSS = `
   .tf-footer {
     background-color: #0d0f14;
     color: #9ca3af;
-    font-family: 'Segoe UI', Arial, sans-serif;
+   font-family: var(--font-sora), "Sora", sans-serif;
     padding-top: 48px;
     border-top: 1px solid #1f2937;
   }

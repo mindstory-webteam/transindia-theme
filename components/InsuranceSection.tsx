@@ -128,7 +128,7 @@ const CSS = `
   .ins-section {
     background: #F3F7FF;
     padding: clamp(60px, 8vw, 110px) 0 clamp(72px, 10vw, 120px);
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-sora), "Sora", sans-serif;
   }
 
   .ins-container {
@@ -145,7 +145,7 @@ const CSS = `
 
   .ins-title {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(28px, 4.2vw, 54px);
+    font-size: clamp(28px, 4.2vw, 38px);
     font-weight: 800;
     line-height: 1.15;
     color: #1A1A1A;

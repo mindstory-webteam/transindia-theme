@@ -313,7 +313,7 @@ export default function ExploreToolsSection() {
         }
 
         .et-heading h2 {
-          font-size: clamp(26px, 4vw, 40px);
+          font-size: clamp(26px, 4vw, 38px);
           font-weight: 800;
           color: #1A1A2E;
           margin: 0 0 14px 0;
