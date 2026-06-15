@@ -1,3 +1,4 @@
+import ClaimsFaqSection from "@/components/claims/ClaimFaqSection";
 import ClaimHero from "@/components/claims/ClaimHero";
 import ClaimsProcessSection from "@/components/claims/ClaimProcessSection";
 import DocumentsChecklistSection from "@/components/claims/Documentschecklistsection";
@@ -14,6 +15,7 @@ export default function Home() {
       <InsuranceClaimsSection/>
       <ClaimsProcessSection/>
       <DocumentsChecklistSection/>
+      <ClaimsFaqSection/>
       <TransindiaFooter/>
     </div>
   );
