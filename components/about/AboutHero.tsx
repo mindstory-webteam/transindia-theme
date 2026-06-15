@@ -191,7 +191,7 @@ const CSS = `
   /* ── iPad Pro & Mini / tablets (≤1024px): side-by-side layout ── */
   @media (max-width: 1024px) {
     .about-hero {
-      background: linear-gradient(135deg, #0b1240 60%, #0d1e6e 100%);
+      background: #001250;
       padding-top: 110px;
       padding-bottom: 60px;
       overflow: visible;
