@@ -41,7 +41,7 @@ const documentGroups: DocumentGroup[] = [
 
 export default function DocumentsChecklistSection() {
   return (
-    <section className="bg-[#F8FAFF] py-12 sm:py-16 lg:py-20">
+    <section className="bg-[#ECF3FE] py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto mb-10 sm:mb-12 max-w-2xl text-center px-4">
