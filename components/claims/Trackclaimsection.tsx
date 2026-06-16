@@ -19,7 +19,7 @@ export default function TrackClaimSection() {
           <span className="mb-4 inline-flex items-center rounded-full bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#158693] shadow-sm">
             Real-time updates
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl"  style={{ fontFamily: 'var(--font-sora), "Sora", sans-serif' }}>
             Track your{" "}
             <span className="text-[#00BCD4]">Claim Status</span>
           </h2>
