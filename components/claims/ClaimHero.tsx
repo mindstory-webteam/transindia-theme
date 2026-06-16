@@ -90,11 +90,11 @@ export default function ClaimHero() {
               <div className="clh-row">
                 <div className="clh-group">
                   <label className="clh-label">Your Name</label>
-                  <input type="text" placeholder="Akshay.m" className="clh-input" />
+                  <input type="text" placeholder="Full Name" className="clh-input" />
                 </div>
                 <div className="clh-group">
                   <label className="clh-label">Mobile Number</label>
-                  <input type="text" placeholder="+91 7510715196" className="clh-input" />
+                  <input type="text" placeholder="+91 0000000000" className="clh-input" />
                 </div>
               </div>
 
@@ -130,6 +130,23 @@ export default function ClaimHero() {
                   rows={4}
                   className="clh-input clh-textarea"
                 />
+              </div>
+
+              <div className="clh-group" style={{ gap: "6px" }}>
+                <div>
+                  <label className="clh-label" style={{ fontSize: "14px", color: "#000", fontWeight: "700" }}>Upload Supporting Documents</label>
+                  <p style={{ margin: "2px 0 0 0", fontSize: "11px", color: "#8c8c8c", fontWeight: "600" }}>JPG, PNG, PDF up to 10 MB each, You can upload multiple files</p>
+                </div>
+                <div className="clh-upload-box">
+                  <input type="file" multiple className="clh-upload-input" />
+                  <div className="clh-upload-content">
+                    <img src="/images/claims/claims-hero/cloud-upload.svg" alt="Upload" width={28} height={28} />
+                    <div className="clh-upload-text">
+                      <p><span className="clh-upload-link">Click to upload</span> or drag and drop files here</p>
+                      <p className="clh-upload-empty">No files uploaded yet</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <label className="clh-checkbox-row">
@@ -288,17 +305,18 @@ const CSS = `
   .clh-form-wrap {
     background: #fff;
     border-radius: 20px;
-    padding: 32px 28px;
+    padding: 20px 28px 32px 28px;
     box-shadow: 0 20px 60px rgba(10,20,90,0.22), 0 4px 16px rgba(0,0,0,0.08);
     position: sticky;
     top: 100px;
+    margin-top: -60px;
   }
 
   .clh-form-title {
     font-size: 20px;
     font-weight: 800;
     color: #0b1240;
-    margin: 0 0 22px 0;
+    margin: 0 0 16px 0;
     font-family: var(--font-sora), 'Sora', sans-serif;
   }
 
@@ -380,6 +398,53 @@ const CSS = `
     width: 100%;
   }
 
+  /* ── Upload Box Styles ── */
+  .clh-upload-box {
+    position: relative;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff;
+    text-align: center;
+    transition: border-color 0.2s;
+    cursor: pointer;
+  }
+  .clh-upload-box:hover {
+    border-color: #20BEC6;
+  }
+  .clh-upload-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .clh-upload-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .clh-upload-text {
+    text-align: left;
+    font-size: 13px;
+    color: #6b7280;
+  }
+  .clh-upload-text p {
+    margin: 0;
+    line-height: 1.4;
+  }
+  .clh-upload-link {
+    color: #0066FF;
+    font-weight: 600;
+  }
+  .clh-upload-empty {
+    font-size: 12px;
+    color: #9ca3af;
+  }
+
 
   /* ── 1400px (xl) ── */
   @media (max-width: 1400px) {
@@ -407,7 +472,7 @@ const CSS = `
     .clh-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
     .clh-title { font-size: 34px; }
     .clh-bento { max-width: 100%; }
-    .clh-form-wrap { position: static; padding: 28px 24px; }
+    .clh-form-wrap { position: static; padding: 28px 24px; margin-top: 0; }
     .clh-card-row { grid-template-columns: 1fr 1fr; }
   }
 

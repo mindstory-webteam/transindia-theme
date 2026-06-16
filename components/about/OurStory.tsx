@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const checkItems = [
   { id: 1, text: "IRDAI-licensed for both Life & General insurance broking" },
@@ -93,6 +94,7 @@ export default function OurStory() {
               </div>
             </div>
           </div>
+          <CoreValuesSection />
         </div>
       </section>
     </>
@@ -295,3 +297,89 @@ const CSS = `
     .cards-grid { grid-template-columns: 1fr; }
   }
 `;
+
+interface CoreValue {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+const coreValues: CoreValue[] = [
+  {
+    title: "Performing in Order to Surpass Excellence",
+    description:
+      "Performing in order to surpass excellence. We believe that achieving excellence is just a milestone in the journey to destiny. We trust in striving for more than excellence in each and every endeavor we undertake.",
+    imageSrc: "/images/about/ourstory/albert.png",
+    imageAlt: "Performing in order to surpass excellence",
+  },
+  {
+    title: "Building Trust and Transparency",
+    description:
+      "We have always operated with a focus on business ethics and we strongly believe that TRUST and TRANSPARENCY are the most important ingredients in any business relationship and the same is inculcated in all our operational process at every step.",
+    imageSrc: "/images/about/ourstory/nelson.png",
+    imageAlt: "Building trust and transparency",
+  },
+  {
+    title: "'Customer' is Regarded as Our King and 'Service', Our Queen",
+    description:
+      "Our customer is the pivot around which all our processes are built as we believe that the customer is the most important stakeholder of our business. We follow the golden principle — Customer First and think through by putting ourselves in our customers' shoes. We constantly rethink and innovate products, services, and capabilities focusing on customer delight.",
+    imageSrc: "/images/about/ourstory/gandhiji.png",
+    imageAlt: "Customer is our king",
+  },
+  {
+    title: "Becoming a Preferred Employer",
+    description:
+      "We are committed to become the most preferred employer in the industry by providing an employee-friendly culture in our organizations and making sure that each individual feels comfortable in the workplace. We create a working environment that is compelling to the best staff and encourage them to perform better with ample career growth. We know success comes from encouraging people to think differently. Our culture promotes innovation and entrepreneurial drive with strong management backing.",
+    imageSrc: "/images/about/ourstory/Timcook.png",
+    imageAlt: "Becoming a preferred employer",
+  },
+  {
+    title: "Committed to the Betterment of Society",
+    description:
+      "Our responsibility towards society and human community is our primary interest. Our principle is First Humanity, then business. Every staff member understands this principle and are always bound towards our customers, patrons, employees, regulatory authorities, finance industry, and the nation, to do business with good moral and business ethics.",
+    imageSrc: "/images/about/ourstory/Teresa.png",
+    imageAlt: "Committed to the betterment of society",
+  },
+];
+
+function CoreValuesSection() {
+  return (
+    <div className="mt-20 max-w-[1400px]">
+      {/* Heading */}
+      <h2 className="heading-dark mb-10">
+        Our Core Values
+      </h2>
+
+      {/* Values list */}
+      <div className="flex flex-col">
+        {coreValues.map((value, idx) => (
+          <div key={value.title} className={`flex flex-col sm:flex-row gap-6 sm:gap-8 py-8 ${idx !== 0 ? 'border-t border-gray-200' : ''}`}>
+            {/* Avatar */}
+            <div className="flex-shrink-0">
+              <div className="relative h-[80px] w-[80px] sm:h-[100px] sm:w-[100px] overflow-hidden rounded-full shadow-sm">
+                <Image
+                  src={value.imageSrc}
+                  alt={value.imageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="100px"
+                />
+              </div>
+            </div>
+
+            {/* Text */}
+            <div className="flex-1 min-w-0 pt-1 sm:pt-3">
+              <h3 className="text-[12px] sm:text-[14px] font-[700] uppercase tracking-wider text-[#00b8c4] mb-2 sm:mb-3">
+                {value.title}
+              </h3>
+              <p className="text-[14px] sm:text-[15px] leading-[1.65] text-[#374151] m-0">
+                {value.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
