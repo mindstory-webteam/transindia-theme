@@ -196,7 +196,7 @@ function FAQRow({
         }
 
         .faq-question {
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           font-size: 13.5px;
           font-weight: 500;
           color: #111827;
@@ -228,7 +228,7 @@ function FAQRow({
         }
 
         .faq-answer {
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           font-size: 13px;
           color: #6b7280;
           line-height: 1.7;
@@ -297,7 +297,7 @@ export default function FAQSection() {
         .faq-section {
           background: #ffffff;
           padding: 80px 24px 120px 24px;
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
         }
 
         /* ── HEADER ── */

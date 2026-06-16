@@ -90,7 +90,7 @@ export default function ConsultationCTA() {
         }
 
         .cta-sub {
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           font-size: 16px;
           font-weight: 400;
           color: rgba(255, 255, 255, 0.88);
@@ -102,7 +102,7 @@ export default function ConsultationCTA() {
         .cta-btn {
           background-color: #EC4F34;
           color: #ffffff;
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           font-size: 15px;
           font-weight: 600;
           border: none;

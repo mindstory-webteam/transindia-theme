@@ -338,7 +338,7 @@ export default function ContactFormSection() {
         .cfs-section {
           background: #F8FAFF;
           padding: 180px 24px 72px 24px;
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
         }
 
         .cfs-inner {
@@ -399,7 +399,7 @@ export default function ContactFormSection() {
           font-size: 13px;
           font-weight: 500;
           cursor: pointer;
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           transition: background 0.2s, color 0.2s, box-shadow 0.2s;
         }
 
@@ -445,7 +445,7 @@ export default function ContactFormSection() {
           padding: 10px 14px;
           font-size: 14px;
           color: #111827;
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           background: #fff;
           outline: none;
           transition: border-color 0.2s, box-shadow 0.2s;
@@ -477,7 +477,7 @@ export default function ContactFormSection() {
         .cfs-submit {
           background: #0D439D;
           color: #fff;
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           font-size: 15px;
           font-weight: 600;
           border: none;
@@ -678,7 +678,7 @@ export default function ContactFormSection() {
           border: 1.5px solid #e5e7eb;
           color: #374151;
           background: #ECF0F9;
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           transition: border-color 0.2s, box-shadow 0.2s;
         }
 

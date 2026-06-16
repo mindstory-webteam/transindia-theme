@@ -49,7 +49,7 @@ const CSS = `
   .ip-section {
     background-color: #ffffff;
     padding: 30px 62px 50px 88px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'matterregular', sans-serif;
   }
 
   .ip-container {

@@ -109,7 +109,7 @@ const CSS = `
     align-items: center;
     justify-content: center;
     padding: 120px 20px 90px 80px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'matterregular', sans-serif;
   }
 
   .our-story-container {

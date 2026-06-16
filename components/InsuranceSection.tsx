@@ -144,7 +144,7 @@ const CSS = `
   }
 
   .ins-title {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'matterregular', sans-serif;
     font-size: clamp(28px, 4.2vw, 38px);
     font-weight: 800;
     line-height: 1.15;
@@ -259,7 +259,7 @@ const CSS = `
   }
 
   .ins-card-title {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'matterregular', sans-serif;
     font-size: clamp(16px, 1.5vw, 20px);
     font-weight: 700;
     color: #111827;

@@ -48,7 +48,7 @@ const CSS = `
   .ml-section {
     background-color: #F8FAFF;
     padding: 72px 20px 88px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'matterregular', sans-serif;
   }
 
   .ml-container {

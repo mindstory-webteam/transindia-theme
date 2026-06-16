@@ -63,7 +63,7 @@ export default function CtaSection() {
           border: none;
           cursor: pointer;
           transition: background 0.15s;
-          font-family: inherit;
+          font-family: 'matterregular', sans-serif;
           letter-spacing: 0.01em;
         }
 

@@ -108,7 +108,7 @@ const CSS = `
   .wct-section {
     background-color: #ffffff;
     padding: 72px 0 88px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'matterregular', sans-serif;
   }
 
   .wct-container {

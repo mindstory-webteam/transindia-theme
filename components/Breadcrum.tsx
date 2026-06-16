@@ -31,7 +31,7 @@ export default function Breadcrum({ crumbs }: BreadcrumProps) {
           align-items: center;
           gap: 0;
           font-size: 13px;
-          font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+          font-family: 'matterregular', sans-serif;
         }
 
         .bc-trail-item {

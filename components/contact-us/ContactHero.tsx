@@ -132,7 +132,7 @@ const CSS = `
     overflow: visible;
     padding-top: 150px;
     padding-bottom: 75px;
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'matterregular', sans-serif;
   }
 
   .contact-inner {

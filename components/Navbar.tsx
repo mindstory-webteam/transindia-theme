@@ -227,7 +227,7 @@ const CSS = `
     font-weight: 700;
     white-space: nowrap;
     background: transparent;
-    font-family: inherit;
+    font-family: 'matterregular', sans-serif;
     transition: border-color 0.18s, background 0.18s;
     display: inline-flex;
     align-items: center;
@@ -250,7 +250,7 @@ const CSS = `
     font-weight: 700;
     white-space: nowrap;
     cursor: pointer;
-    font-family: inherit;
+    font-family: 'matterregular', sans-serif;
     box-shadow: 0 3px 14px rgba(244,98,42,0.45);
     transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
     display: inline-flex;
@@ -310,7 +310,7 @@ const CSS = `
     font-size: 15px;
     font-weight: 500;
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-family: inherit;
+    font-family: 'matterregular', sans-serif;
   }
 
   .drawer-link:last-of-type {

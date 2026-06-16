@@ -179,7 +179,7 @@ const CSS = `
     overflow: visible;
     padding-top: 150px;
     padding-bottom: 80px;
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'matterregular', sans-serif;
   }
 
   /* ── Inner: wider form column, tighter gap ── */
@@ -350,7 +350,7 @@ const CSS = `
     padding: 9px 12px;
     font-size: 13px;
     color: #111827;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'matterregular', sans-serif;
     background: #fff;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;

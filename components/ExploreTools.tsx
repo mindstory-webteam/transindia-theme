@@ -304,7 +304,7 @@ export default function ExploreToolsSection() {
         .et-section {
           background: #FFFFFF;
           padding: clamp(48px, 8vw, 72px) clamp(16px, 5vw, 24px);
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'matterregular', sans-serif;
         }
 
         .et-heading {
