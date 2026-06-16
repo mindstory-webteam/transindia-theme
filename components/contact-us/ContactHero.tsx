@@ -281,6 +281,9 @@ const CSS = `
     .contact-lg-banner {
       display: none;
     }
+    .contact-trail-wrapper {
+      top: -20px;
+    }
     .contact-hero {
       background: #0b1240;
     }
@@ -295,7 +298,13 @@ const CSS = `
   }
 
   @media (max-width: 900px) {
-    .contact-content { flex: 1; }
+    .contact-content { 
+      flex: 1; 
+      padding-bottom: 180px; 
+    }
+    .contact-inner {
+      min-height: auto;
+    }
     .contact-title { font-size: 32px; }
   }
 

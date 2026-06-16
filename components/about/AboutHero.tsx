@@ -212,6 +212,13 @@ const CSS = `
     font-weight: 500;
   }
 
+  /* ── Tablets / small laptops (≤1200px): adjust breadcrumb to avoid overlap ── */
+  @media (max-width: 1200px) {
+    .about-trail-wrapper {
+      top: -10px;
+    }
+  }
+
   /* ── iPad Pro & Mini / tablets (≤1024px): side-by-side layout ── */
   @media (max-width: 1024px) {
     .about-lg-banner {
@@ -233,9 +240,7 @@ const CSS = `
 
     /* Breadcrumb */
     .about-trail-wrapper {
-      position: absolute;
-      top: -30px;
-      left: 28px;
+      display: none;
     }
 
     .about-content { 
