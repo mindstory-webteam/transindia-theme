@@ -23,7 +23,7 @@ export default function TrackClaimSection() {
             Track your{" "}
             <span className="text-[#00BCD4]">Claim Status</span>
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-slate-500 sm:text-base">
+          <p className="mt-4 text-base leading-relaxed mx-auto"  style={{color:"#535862", fontSize:"18px"}}>
             Enter your claim reference number or policy number below to
             <br className="hidden sm:block" /> see exactly where your claim
             stands right now.

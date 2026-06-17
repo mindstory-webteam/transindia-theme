@@ -8,31 +8,31 @@ interface ProcessStep {
 
 const processSteps: ProcessStep[] = [
   {
-    step: "Step - 01",
+    step: "STEP - 01",
     title: "Intimate Us",
     description:
       "Call or fill the online form. Our team responds within 2 hours.",
   },
   {
-    step: "Step - 02",
+    step: "STEP - 02",
     title: "Document Collection",
     description:
       "We provide a complete document checklist and help gather everything needed.",
   },
   {
-    step: "Step - 03",
+    step: "STEP - 03",
     title: "Submit to Insurer",
     description:
       "We file the claim with the insurer and confirm receipt with a reference number.",
   },
   {
-    step: "Step - 04",
+    step: "STEP - 04",
     title: "Follow Up Daily",
     description:
       "We track status daily and chase the insurer on your behalf.",
   },
   {
-    step: "Step - 05",
+    step: "STEP - 05",
     title: "Settlement",
     description:
       "Claim amount transferred directly to your account. We confirm and close with you.",
@@ -52,7 +52,7 @@ export default function ClaimsProcessSection() {
             How our claims{" "}
             <span className="text-cyan-400">process works</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-500">
+          <p className="mt-4 mx-auto max-w-[500px] text-base leading-relaxed" style={{color:"#535862", fontSize:"18px"}}>
             Transparent, fast, and fully supported — from your first call to
             final settlement cheque.
           </p>
@@ -74,11 +74,11 @@ export default function ClaimsProcessSection() {
                   {item.step}
                 </span>
               </div>
-              <div className={`flex flex-col rounded-[20px] bg-[#0c1a4a] px-6 pt-17.5 pb-6 h-47.25 ${idx === 4 ? "w-full" : "w-full"}`}>
-                <h3 className="text-[17px] font-bold text-white">
+              <div className={`flex flex-col rounded-[20px] bg-[#0c1a4a] px-6 pt-[70px] pb-6 min-h-[189px] ${idx === 4 ? "w-full" : "w-full"}`}>
+                <h3 className="text-[17px] font-semibold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[13px] leading-[1.6] text-slate-300">
+                <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D5DB]">
                   {item.description}
                 </p>
               </div>
@@ -98,11 +98,11 @@ export default function ClaimsProcessSection() {
                   {item.step}
                 </span>
               </div>
-              <div className="flex flex-col rounded-[20px] bg-[#0c1a4a] px-6 pt-[70px] pb-6 w-[236px] h-[189px]">
-                <h3 className="text-[17px] font-bold text-white">
+              <div className="flex flex-col rounded-[20px] bg-[#0c1a4a] px-6 pt-[70px] pb-6 w-[236px] min-h-[189px]">
+                <h3 className="text-[17px] font-semibold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[13px] leading-[1.6] text-slate-300">
+                <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D5DB]">
                   {item.description}
                 </p>
               </div>

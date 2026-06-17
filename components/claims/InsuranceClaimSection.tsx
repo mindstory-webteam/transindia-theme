@@ -148,7 +148,7 @@ export default function InsuranceClaimsSection() {
             Every type of{" "}
             <span className="text-orange-500">insurance claim</span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed text-slate-500">
+          <p className="mt-3 sm:mt-4 sm:text-base leading-relaxed " style={{color:'#535862', fontSize:'18px' }}>
             Whether it&apos;s a life, health, motor, or property claim — our
             team knows the process inside out and fights on your behalf.
           </p>

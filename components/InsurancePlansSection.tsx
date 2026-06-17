@@ -226,7 +226,7 @@ const CSS = `
   .ips-heading { flex: 1; min-width: 260px; }
 
   .ips-title {
-    font-size: clamp(26px, 3.8vw, 38px);
+    font-size:38px;
     font-weight: 900;
     color: #111827;
     line-height: 1.15;
@@ -234,12 +234,12 @@ const CSS = `
     letter-spacing: -0.03em;
   }
 
-  .ips-orange { color: #F4622A; }
-  .ips-teal   { color: #0BB5B5; }
+  .ips-orange { color: #F15A3E; }
+  .ips-teal   { color: #00BCD4; }
 
   .ips-subtitle {
-    font-size: clamp(13px, 1.2vw, 15.5px);
-    color: #9CA3AF;
+    font-size: 18px;
+    color: #535862;
     line-height: 1.7;
     margin: 0;
     font-weight: 400;
