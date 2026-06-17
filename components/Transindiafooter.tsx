@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react";
+import Link from "next/link";
 
 const LOGO_SRC          = "/images/logo/transindia.png";
 const ICON_ADDRESS_SRC  = "/images/Footer/location.svg";
@@ -16,35 +17,36 @@ const socialIcons: { name: string; src: string; href: string }[] = [
 ];
 
 const productLinks = [
-  "Health insurance",
-  "Life insurance",
-  "Car insurance",
-  "Bike insurance",
-  "Home insurance",
-  "Marine insurance",
-  "Travel insurance",
+  { label: "Health insurance", href: "#" },
+  { label: "Life insurance", href: "#" },
+  { label: "Car insurance", href: "#" },
+  { label: "Bike insurance", href: "#" },
+  { label: "Home insurance", href: "#" },
+  { label: "Marine insurance", href: "#" },
+  { label: "Travel insurance", href: "#" },
 ];
 
 const companyLinks = [
-  "About us",
-  "Our team",
-  "Become a PoSP",
-  "Corporate solutions",
-  "Careers",
+  { label: "About us", href: "/about" },
+  { label: "Our team", href: "#" },
+  { label: "Become a PoSP", href: "#" },
+  { label: "Corporate solutions", href: "#" },
+  { label: "Careers", href: "#" },
 ];
 
 const supportLinks = [
-  "Make a claim",
-  "Track claim",
-  "Renew policy",
-  "FAQ",
-  "Privacy policy",
-  "Terms of use",
+  { label: "Make a claim", href: "/claims" },
+  { label: "Track claim", href: "#" },
+  { label: "Contact us", href: "/contact-us" },
+  { label: "Renew policy", href: "#" },
+  { label: "FAQ", href: "#" },
+  { label: "Privacy policy", href: "#" },
+  { label: "Terms of use", href: "#" },
 ];
 
 const bottomLinks = ["Terms", "Privacy", "Disclaimer", "Cookie policy"];
 
-const FooterColumn: React.FC<{ title: string; links: string[] }> = ({ title, links }) => (
+const FooterColumn: React.FC<{ title: string; links: { label: string; href: string }[] }> = ({ title, links }) => (
   <div style={{ minWidth: 120 }}>
     <p
       style={{
@@ -60,9 +62,9 @@ const FooterColumn: React.FC<{ title: string; links: string[] }> = ({ title, lin
     </p>
     <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
       {links.map((link) => (
-        <li key={link} style={{ marginBottom: 9 }}>
-          <a
-            href="#"
+        <li key={link.label} style={{ marginBottom: 9 }}>
+          <Link
+            href={link.href}
             style={{
               color: "#9ca3af",
               fontSize: 12.5,
@@ -73,8 +75,8 @@ const FooterColumn: React.FC<{ title: string; links: string[] }> = ({ title, lin
             onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#ffffff")}
             onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "#9ca3af")}
           >
-            {link}
-          </a>
+            {link.label}
+          </Link>
         </li>
       ))}
     </ul>

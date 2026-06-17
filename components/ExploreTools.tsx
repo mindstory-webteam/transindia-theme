@@ -304,7 +304,7 @@ export default function ExploreToolsSection() {
         .et-section {
           background: #FFFFFF;
           padding: clamp(48px, 8vw, 72px) clamp(16px, 5vw, 24px);
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'matterregular', sans-serif;
         }
 
         .et-heading {
@@ -313,7 +313,7 @@ export default function ExploreToolsSection() {
         }
 
         .et-heading h2 {
-          font-size: clamp(26px, 4vw, 38px);
+          font-size: 38px;
           font-weight: 800;
           color: #1A1A2E;
           margin: 0 0 14px 0;
@@ -322,8 +322,8 @@ export default function ExploreToolsSection() {
         }
 
         .et-heading p {
-          font-size: clamp(14px, 1.3vw, 16px);
-          color: #6B7280;
+          font-size:18px;
+          color: #535862;
           max-width: 480px;
           margin: 0 auto;
           line-height: 1.65;

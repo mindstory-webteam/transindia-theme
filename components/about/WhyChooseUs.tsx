@@ -108,7 +108,7 @@ const CSS = `
   .wct-section {
     background-color: #ffffff;
     padding: 72px 0 88px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'matterregular', sans-serif;
   }
 
   .wct-container {
@@ -154,9 +154,9 @@ const CSS = `
     margin: 0 auto 60px auto;
     max-width: 500px;
     text-align: center;
-    font-size: 14.5px;
+    font-size: 18px;
     line-height: 1.7;
-    color: #6b7280;
+    color: #535862;
   }
 
   /* ── Grid: 3 cols, 2 rows ── */

@@ -67,9 +67,9 @@ export default function InsuranceSection() {
             <h2 className="ins-title">
               Insurance Made
               <br />
-              <span style={{ color: "#F5490A", fontStyle: "italic" }}>Simple</span>
+              <span style={{ color: "#F15A3E",}}>Simple</span>
               <span className="ins-amp"> &amp; </span>
-              <span style={{ color: "#00B8C4", fontStyle: "italic" }}>Transparent</span>
+              <span style={{ color: "#00BCD4", }}>Transparent</span>
             </h2>
             <p className="ins-subtitle">
               We cut through the complexity so you always know exactly what
@@ -127,7 +127,7 @@ const CSS = `
 
   .ins-section {
     background: #F3F7FF;
-    padding: clamp(60px, 8vw, 110px) 0 clamp(72px, 10vw, 120px);
+    padding: 160px 0 clamp(72px, 10vw, 120px);
     font-family: var(--font-sora), "Sora", sans-serif;
   }
 
@@ -144,8 +144,7 @@ const CSS = `
   }
 
   .ins-title {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(28px, 4.2vw, 38px);
+    font-size:38px;
     font-weight: 800;
     line-height: 1.15;
     color: #1A1A1A;
@@ -159,8 +158,8 @@ const CSS = `
   }
 
   .ins-subtitle {
-    font-size: clamp(14px, 1.4vw, 17px);
-    color: #888;
+    font-size: 18px;
+    color: #535862;
     font-weight: 400;
     line-height: 1.7;
     margin: 0;
@@ -259,7 +258,7 @@ const CSS = `
   }
 
   .ins-card-title {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'matterregular', sans-serif;
     font-size: clamp(16px, 1.5vw, 20px);
     font-weight: 700;
     color: #111827;

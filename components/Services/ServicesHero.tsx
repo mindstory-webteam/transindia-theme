@@ -89,8 +89,7 @@ const CSS = `
     overflow: visible;
     padding-top: 104px;
     padding-bottom: 0;
-
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'matterregular', sans-serif;
         height: 700px;
   }
 

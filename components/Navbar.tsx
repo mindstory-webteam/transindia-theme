@@ -14,8 +14,8 @@ interface NavItem {
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Our products",          hasDropdown: true  },
-  { label: "Renew existing policy", hasDropdown: true  },
+  { label: "Services",          hasDropdown: true , href: "/our-services" },
+  { label: "Renew existing policy",      },
   { label: "Become an advisor" },
   { label: "About us",              href: "/about"     },
   { label: "Contact us",   href: "/contact-us"  },
@@ -74,8 +74,8 @@ export default function Navbar() {
 
           {/* ── CTA Buttons ── */}
           <div className="nav-actions">
-            <a href="#" className="btn-outline">Become a PoSP</a>
-            <a href="#" className="btn-fill">Make a claim</a>
+            <a href="https://www.transindiainsurance.com/partner/posp-home" className="btn-outline">Become a PoSP</a>
+            <a href="/claims" className="btn-fill">Make a claim</a>
           </div>
 
           {/* ── Hamburger (mobile) ── */}
@@ -111,8 +111,8 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="drawer-actions">
-              <a href="#" className="btn-outline drawer-btn">Become a PoSP</a>
-              <a href="#" className="btn-fill drawer-btn">Make a claim</a>
+              <a href="https://www.transindiainsurance.com/partner/posp-home" className="btn-outline drawer-btn">Become a PoSP</a>
+              <a href="/claims" className="btn-fill drawer-btn">Make a claim</a>
             </div>
           </div>
         )}
@@ -220,14 +220,14 @@ const CSS = `
   .btn-outline {
     padding: 9px 22px;
     border: 1.5px solid rgba(255,255,255,0.75);
-    border-radius: 9px;
+    border-radius: 8px;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
     background: transparent;
-    font-family: inherit;
+    font-family: 'matterregular', sans-serif;
     transition: border-color 0.18s, background 0.18s;
     display: inline-flex;
     align-items: center;
@@ -241,28 +241,23 @@ const CSS = `
 
   .btn-fill {
     padding: 9px 22px;
-    background: #F4622A;
+    background: #EC4F34;
     border: none;
-    border-radius: 9px;
+    border-radius: 8px;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
     cursor: pointer;
-    font-family: inherit;
-    box-shadow: 0 3px 14px rgba(244,98,42,0.45);
+    font-family: 'matterregular', sans-serif;
     transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  .btn-fill:hover {
-    background: #e5521c;
-    box-shadow: 0 6px 22px rgba(244,98,42,0.6);
-    transform: translateY(-1px);
-  }
+ 
 
   /* ── Hamburger — hidden on desktop ── */
   .nav-hamburger {
@@ -310,7 +305,7 @@ const CSS = `
     font-size: 15px;
     font-weight: 500;
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-family: inherit;
+    font-family: 'matterregular', sans-serif;
   }
 
   .drawer-link:last-of-type {
@@ -332,8 +327,15 @@ const CSS = `
 
   /* ── Responsive breakpoints ── */
 
-  /* Tablet/mobile: hide desktop nav, show hamburger */
-  @media (max-width: 900px) {
+  /* Large screens: tighten gaps to fit all long links */
+  @media (max-width: 1400px) {
+    .nav-inner { gap: 16px; padding: 0 24px; }
+    .nav-link { padding: 8px 10px; font-size: 13px; }
+    .nav-actions { gap: 8px; }
+  }
+
+  /* Tablet/mobile: hide desktop nav, show hamburger earlier to avoid overlap */
+  @media (max-width: 1150px) {
     .nav-links   { display: none; }
     .nav-actions { display: none; }
     .nav-hamburger { display: flex; }

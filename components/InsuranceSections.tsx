@@ -175,7 +175,7 @@ function AdvisorSection() {
           <BulletList items={expertBullets} />
           <div>
             <button
-              style={{ ...s.btnOrange, background: "#0EA5E9" }}
+              style={{ ...s.btnOrange, background: "#00BCD4" }}
               onMouseEnter={e => (e.currentTarget.style.opacity = "0.88")}
               onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
             >Speak to an expert</button>
@@ -229,11 +229,11 @@ function AdvisorSection() {
           {/* Stats */}
           <div style={{ ...s.statsGrid, margin: "20px 0 0" }}>
             <div style={s.statBox}>
-              <p style={s.statNum}>15+</p>
+              <p style={{...s.statNum , color:"#0D2B5E" }}>15+</p>
               <p style={s.statLabel}>Years of experience</p>
             </div>
             <div style={{ ...s.statBox, borderLeft: "1px solid #E2E8F0" }}>
-              <p style={{ ...s.statNum, color: "#F97316" }}>20+</p>
+              <p style={{ ...s.statNum, color: "#F5A623" }}>20+</p>
               <p style={s.statLabel}>Insurer Partners</p>
             </div>
           </div>
@@ -468,8 +468,8 @@ const s: Record<string, React.CSSProperties> = {
   // Pills
   pillOrange: {
     display: "inline-block",
-    background: "#FFF7ED",
-    color: "#EA580C",
+    background: "#FEF0ED",
+    color: "#B74E3B",
     fontSize: 11,
     fontWeight: 700,
     letterSpacing: "0.07em",
@@ -480,8 +480,8 @@ const s: Record<string, React.CSSProperties> = {
   },
   pillGray: {
     display: "inline-block",
-    background: "#F1F5F9",
-    color: "#475569",
+    background: "#E0F7FA",
+    color: "#158693",
     fontSize: 11,
     fontWeight: 700,
     letterSpacing: "0.07em",
@@ -492,24 +492,24 @@ const s: Record<string, React.CSSProperties> = {
   },
 
   heading: {
-    fontSize: "clamp(26px, 3.2vw, 38px)",
+    fontSize: 38,
     fontWeight: 800,
     lineHeight: 1.15,
     color: "#1E293B",
     margin: 0,
     letterSpacing: "-0.02em",
   },
-  accentOrange: { color: "#F97316" },
-  accentBlue:   { color: "#0EA5E9" },
+  accentOrange: { color: "#F15A3E" },
+  accentBlue:   { color: "#00BCD4" },
   body: {
-    fontSize: 15,
-    color: "#64748B",
+    fontSize: 18,
+    color: "#535862",
     lineHeight: 1.78,
     margin: 0,
   },
   btnOrange: {
     display: "inline-block",
-    background: "#F97316",
+    background: "#EC4F34",
     color: "#fff",
     fontWeight: 700,
     fontSize: 15,

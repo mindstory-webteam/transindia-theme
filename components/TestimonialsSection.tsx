@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
           <h2 style={heading}>
             <span style={{ color: "#1E293B" }}>Real people.</span>
             <br />
-            <span style={{ color: "#F97316" }}>Real peace of mind</span>
+            <span style={{ color: "#F15A3E" }}>Real peace of mind</span>
           </h2>
           <p className="tm-subheading">
             Hear from clients who found the right cover — and the right
@@ -120,8 +120,8 @@ const RESPONSIVE_CSS = `
   }
 
   .tm-subheading {
-    font-size: clamp(14px, 1.4vw, 17px);
-    color: #64748B;
+    font-size: 18px;
+    color: #535862;
     line-height: 1.7;
     margin: 0;
   }

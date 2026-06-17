@@ -132,7 +132,7 @@ const CSS = `
     overflow: visible;
     padding-top: 150px;
     padding-bottom: 75px;
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'matterregular', sans-serif;
   }
 
   .contact-inner {
@@ -256,7 +256,7 @@ const CSS = `
   .contact-lg-banner {
     position: absolute;
     right: 12%; /* Aligns it roughly in the middle of the 2 right cards */
-    bottom: -90px; /* Adjust to let it peek out/sit under cards */
+    bottom: -20px; /* Adjust to let it peek out/sit under cards */
     width: 400px; /* Adjust size as needed */
     pointer-events: none;
     z-index: 1;
@@ -281,6 +281,9 @@ const CSS = `
     .contact-lg-banner {
       display: none;
     }
+    .contact-trail-wrapper {
+      top: -20px;
+    }
     .contact-hero {
       background: #0b1240;
     }
@@ -295,7 +298,13 @@ const CSS = `
   }
 
   @media (max-width: 900px) {
-    .contact-content { flex: 1; }
+    .contact-content { 
+      flex: 1; 
+      padding-bottom: 180px; 
+    }
+    .contact-inner {
+      min-height: auto;
+    }
     .contact-title { font-size: 32px; }
   }
 

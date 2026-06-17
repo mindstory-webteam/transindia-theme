@@ -95,7 +95,7 @@ function QuoteBar() {
       </div>
 
       <button className="ins-quote-cta" style={{
-          marginLeft:16, padding:"16px 32px", background:"#F4622A",
+          marginLeft:16, padding:"16px 32px", background:"#F25917",
           border:"none", borderRadius:12, color:"#fff", fontSize:16,
           fontWeight:800, cursor:"pointer", display:"flex", alignItems:"center",
           gap:10, whiteSpace:"nowrap", boxShadow:"0 4px 20px rgba(244,98,42,0.45)",
@@ -285,10 +285,7 @@ export default function Banner() {
           .ins-quotebar{
             border-radius:14px!important;
           }
-          .ins-spacer{
-            padding-top:32px!important;
-            padding-bottom:40px!important;
-          }
+        
         }
       `}</style>
 
@@ -446,12 +443,7 @@ export default function Banner() {
           </div>
         </section>
 
-        {/* Spacer below banner to clear the overlapping QuoteBar */}
-        <div className="ins-spacer" style={{
-          background:"#F0F4FA",
-          paddingTop:`${QUOTE_BAR_HALF + 64}px`,
-          paddingBottom:64,
-        }} />
+    
       </div>
     </>
   );

@@ -147,22 +147,28 @@ const faqs: FAQItem[] = [
 const leftFaqs = faqs.filter((_, i) => i % 2 === 0);
 const rightFaqs = faqs.filter((_, i) => i % 2 !== 0);
 
-function FAQRow({ item }: { item: FAQItem }) {
-  const [open, setOpen] = useState(false);
-
+function FAQRow({
+  item,
+  isOpen,
+  onToggle,
+}: {
+  item: FAQItem;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
   return (
-    <div className={`faq-row${open ? " faq-row--open" : ""}`}>
+    <div className={`faq-row${isOpen ? " faq-row--open" : ""}`}>
       <button
         className="faq-trigger"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
+        onClick={onToggle}
+        aria-expanded={isOpen}
       >
         <span className="faq-question">{item.question}</span>
-        <span className={`faq-icon${open ? " faq-icon--open" : ""}`}>
-          {open ? "-" : "+"}
+        <span className={`faq-icon${isOpen ? " faq-icon--open" : ""}`}>
+          {isOpen ? "-" : "+"}
         </span>
       </button>
-      {open && <p className="faq-answer">{item.answer}</p>}
+      {isOpen && <p className="faq-answer">{item.answer}</p>}
 
       <style jsx>{`
         .faq-row {
@@ -190,9 +196,9 @@ function FAQRow({ item }: { item: FAQItem }) {
         }
 
         .faq-question {
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           font-size: 13.5px;
-          font-weight: 500;
+          font-weight: 600;
           color: #111827;
           line-height: 1.5;
           flex: 1;
@@ -200,7 +206,7 @@ function FAQRow({ item }: { item: FAQItem }) {
 
         .faq-row--open .faq-question {
           color: #2145d6;
-          font-weight: 600;
+          font-weight: 700;
         }
 
         .faq-icon {
@@ -222,7 +228,7 @@ function FAQRow({ item }: { item: FAQItem }) {
         }
 
         .faq-answer {
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
           font-size: 13px;
           color: #6b7280;
           line-height: 1.7;
@@ -247,6 +253,12 @@ function FAQRow({ item }: { item: FAQItem }) {
 }
 
 export default function FAQSection() {
+  const [openId, setOpenId] = useState<number | null>(null);
+
+  const handleToggle = (id: number) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  };
+
   return (
     <section className="faq-section">
       {/* Header */}
@@ -261,12 +273,22 @@ export default function FAQSection() {
       <div className="faq-grid">
         <div className="faq-col">
           {leftFaqs.map((item) => (
-            <FAQRow key={item.id} item={item} />
+            <FAQRow
+              key={item.id}
+              item={item}
+              isOpen={openId === item.id}
+              onToggle={() => handleToggle(item.id)}
+            />
           ))}
         </div>
         <div className="faq-col">
           {rightFaqs.map((item) => (
-            <FAQRow key={item.id} item={item} />
+            <FAQRow
+              key={item.id}
+              item={item}
+              isOpen={openId === item.id}
+              onToggle={() => handleToggle(item.id)}
+            />
           ))}
         </div>
       </div>
@@ -275,7 +297,7 @@ export default function FAQSection() {
         .faq-section {
           background: #ffffff;
           padding: 80px 24px 120px 24px;
-          font-family: "Poppins", sans-serif;
+          font-family: 'matterregular', sans-serif;
         }
 
         /* ── HEADER ── */

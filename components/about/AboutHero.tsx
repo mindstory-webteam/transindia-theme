@@ -66,7 +66,7 @@ const CSS = `
     overflow: visible; 
     padding-top: 150px; 
     padding-bottom: 75px; 
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'matterregular', sans-serif;
   }
 
   .about-inner {
@@ -150,12 +150,18 @@ const CSS = `
 
   .about-lg-banner {
     position: absolute;
-    right: 0;
-    bottom: -80px; /* peek under the stats bar */
+    right: -50px;
+    bottom: -75px; /* peek under the stats bar */
     width: 55%;
     max-width: 680px;
     z-index: 1;
     pointer-events: none;
+  }
+
+  @media (max-width: 1450px) {
+    .about-lg-banner {
+      right: 0;
+    }
   }
 
   .about-lg-banner img {
@@ -212,6 +218,13 @@ const CSS = `
     font-weight: 500;
   }
 
+  /* ── Tablets / small laptops (≤1200px): adjust breadcrumb to avoid overlap ── */
+  @media (max-width: 1200px) {
+    .about-trail-wrapper {
+      top: -10px;
+    }
+  }
+
   /* ── iPad Pro & Mini / tablets (≤1024px): side-by-side layout ── */
   @media (max-width: 1024px) {
     .about-lg-banner {
@@ -233,9 +246,7 @@ const CSS = `
 
     /* Breadcrumb */
     .about-trail-wrapper {
-      position: absolute;
-      top: -30px;
-      left: 28px;
+      display: none;
     }
 
     .about-content { 

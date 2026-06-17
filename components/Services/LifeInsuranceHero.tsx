@@ -176,7 +176,7 @@ export default function LifeInsuranceHero() {
 }
 
 const CSS = `
-  .li-hero *{ box-sizing: border-box; font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+  .li-hero *{ box-sizing: border-box; font-family: 'matterregular', sans-serif; }
 
   .li-hero{
     background: #001250;
@@ -327,7 +327,7 @@ const CSS = `
     font-size: 14px;
     color: #1F2937;
     background: #fff;
-    font-family: inherit;
+    font-family: 'matterregular', sans-serif;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
@@ -370,7 +370,7 @@ const CSS = `
     border-radius: 8px;
     font-size: 15px;
     font-weight: 800;
-    font-family: inherit;
+    font-family: 'matterregular', sans-serif;
     cursor: pointer;
     margin-top: 6px;
     transition: background 0.2s;
