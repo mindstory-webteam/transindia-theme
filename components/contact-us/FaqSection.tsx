@@ -198,7 +198,7 @@ function FAQRow({
         .faq-question {
           font-family: 'matterregular', sans-serif;
           font-size: 13.5px;
-          font-weight: 500;
+          font-weight: 600;
           color: #111827;
           line-height: 1.5;
           flex: 1;
@@ -206,7 +206,7 @@ function FAQRow({
 
         .faq-row--open .faq-question {
           color: #2145d6;
-          font-weight: 600;
+          font-weight: 700;
         }
 
         .faq-icon {

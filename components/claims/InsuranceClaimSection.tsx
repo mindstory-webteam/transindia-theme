@@ -161,7 +161,7 @@ export default function InsuranceClaimsSection() {
             return (
               <article
                 key={category.title}
-                className="flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-shadow hover:shadow-md"
+                className="flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)]"
               >
                 {/* Illustration */}
                 <div

@@ -62,7 +62,7 @@ export default function DocumentsChecklistSection() {
           {documentGroups.map((group) => (
             <div
               key={group.title}
-              className="rounded-2xl border-t-4 border-slate-200 bg-white p-5 sm:p-6 shadow-sm"
+              className="rounded-2xl border-t-4 border-[#C1D5DD] bg-white p-5 sm:p-6 shadow-sm"
             >
               <h3 className="text-base sm:text-lg font-bold text-slate-900">
                 {group.title}
