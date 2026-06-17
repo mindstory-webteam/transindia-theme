@@ -150,12 +150,18 @@ const CSS = `
 
   .about-lg-banner {
     position: absolute;
-    right: 0;
+    right: -50px;
     bottom: -75px; /* peek under the stats bar */
     width: 55%;
     max-width: 680px;
     z-index: 1;
     pointer-events: none;
+  }
+
+  @media (max-width: 1450px) {
+    .about-lg-banner {
+      right: 0;
+    }
   }
 
   .about-lg-banner img {
