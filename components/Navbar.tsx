@@ -220,7 +220,7 @@ const CSS = `
   .btn-outline {
     padding: 9px 22px;
     border: 1.5px solid rgba(255,255,255,0.75);
-    border-radius: 9px;
+    border-radius: 8px;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
@@ -241,9 +241,9 @@ const CSS = `
 
   .btn-fill {
     padding: 9px 22px;
-    background: #F4622A;
+    background: #EC4F34;
     border: none;
-    border-radius: 9px;
+    border-radius: 8px;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
@@ -251,18 +251,13 @@ const CSS = `
     white-space: nowrap;
     cursor: pointer;
     font-family: 'matterregular', sans-serif;
-    box-shadow: 0 3px 14px rgba(244,98,42,0.45);
     transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  .btn-fill:hover {
-    background: #e5521c;
-    box-shadow: 0 6px 22px rgba(244,98,42,0.6);
-    transform: translateY(-1px);
-  }
+ 
 
   /* ── Hamburger — hidden on desktop ── */
   .nav-hamburger {
