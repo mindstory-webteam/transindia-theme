@@ -364,7 +364,7 @@ export default function Banner() {
           position:"relative", overflow:"visible",
           paddingTop:88,
           paddingBottom:`${QUOTE_BAR_HALF}px`,
-          height:"100vh", minHeight:500,
+          minHeight:"100vh",   /* grows on short/landscape viewports instead of clipping the heading */
         }}>
           {/* Background glows */}
           <div style={{position:"absolute",top:"10%",right:"25%",width:700,height:900,
