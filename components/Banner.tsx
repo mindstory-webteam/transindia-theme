@@ -61,7 +61,7 @@ function QuoteBar() {
       boxShadow:"0 8px 48px rgba(0,0,0,0.18)",
       padding:"20px 28px", display:"flex", alignItems:"center", gap:0,
     }}>
-      <div style={{
+      <div className="ins-quote-title" style={{
         paddingRight:28, borderRight:"1.5px solid #E5E9F2",
         whiteSpace:"nowrap", fontSize:18, fontWeight:900,
         color:"#0B2563", minWidth:148,
@@ -114,9 +114,9 @@ function QuoteBar() {
   );
 }
 
-function FloatingCard({ children, style }: { children: React.ReactNode; style: React.CSSProperties }) {
+function FloatingCard({ children, style, className = "" }: { children: React.ReactNode; style: React.CSSProperties; className?: string }) {
   return (
-    <div className="floating-card" style={{
+    <div className={`floating-card ${className}`} style={{
       position: "absolute",
       background: "rgba(5, 18, 80, 0.82)",
       border: "1.5px solid rgba(56, 189, 248, 0.28)",
@@ -153,7 +153,7 @@ function IconBox({ children }: { children: React.ReactNode }) {
 }
 
 export default function Banner() {
-  const QUOTE_BAR_HALF = 38;
+  const QUOTE_BAR_HALF = 56;
 
   return (
     <>
@@ -167,13 +167,21 @@ export default function Banner() {
         }
         .pulse-dot{animation:pulseDot 2s ease-in-out infinite}
 
-        /* ── TABLET (≤960px) ── */
-        @media(max-width:960px){
+        /* ─────────────────────────────────────────────
+           TABLET & SMALL DESKTOP  (≤1280px)
+           Stack the columns, keep the floating cards
+           visible, and let the quote card straddle the
+           bottom edge of the blue banner. Covers smart-
+           display / tablet widths such as 1280 and 1024,
+           and uses auto height so short viewports (e.g.
+           1024×600) never crush the hero.
+           ───────────────────────────────────────────── */
+        @media(max-width:1280px){
           .ins-section{
             height:auto!important;
             min-height:auto!important;
-            padding-bottom:0!important;
             padding-top:80px!important;
+            padding-bottom:84px!important;   /* blue room below image for overlap */
           }
           .ins-inner{
             flex-direction:column!important;
@@ -182,12 +190,12 @@ export default function Banner() {
           }
           .ins-left{
             flex:unset!important;
-            max-width:100%!important;
+            max-width:560px!important;
             width:100%!important;
-            padding-bottom:40px!important;
-            text-align:center!important;
+            margin:0 auto!important;
+            padding-bottom:48px!important;
+            text-align:left!important;
           }
-          .ins-left > div[style]{justify-content:center!important;}
           .ins-right{
             flex:unset!important;
             max-width:100%!important;
@@ -196,19 +204,42 @@ export default function Banner() {
             justify-content:center!important;
           }
           .ins-right > div{
-            width:80%!important;
-            margin-right:0!important;
-          }
-          .ins-right img{
-            max-width:280px!important;
+            width:320px!important;
+            max-width:90%!important;
             margin:0 auto!important;
           }
-          .floating-card{ display:none!important; }
+          .ins-right img{
+            width:100%!important;
+            max-width:100%!important;
+            margin:0 auto!important;
+          }
+
+          /* keep cards visible, shrink toward the image edges */
+          .floating-card{
+            display:flex!important;
+            transform:scale(0.82);
+          }
+          .card-health{
+            top:8%!important;  left:-14%!important; right:auto!important;
+            transform-origin:top left;
+          }
+          .card-advisor{
+            top:8%!important;  right:-10%!important; left:auto!important;
+            transform-origin:top right;
+          }
+          .card-claim{
+            bottom:16%!important; left:-14%!important; right:auto!important;
+            transform-origin:bottom left;
+          }
+          .card-expert{
+            bottom:16%!important; right:-10%!important; left:auto!important;
+            transform-origin:bottom right;
+          }
+
+          /* quote card overlaps up into the blue, rest hangs on white */
           .ins-quote-wrap{
-            position:relative!important;
-            bottom:0!important;
-            padding:24px 32px!important;
-            margin-top:0!important;
+            margin-top:-68px!important;
+            padding:0 32px!important;
           }
           .ins-quotebar{
             flex-direction:column!important;
@@ -216,10 +247,11 @@ export default function Banner() {
             gap:0!important;
             padding:20px!important;
           }
-          .ins-quotebar > div:first-child{
+          .ins-quote-title{
             border-right:none!important;
-            border-bottom:1.5px solid #E5E9F2!important;
+            border-bottom:2px solid #1D4ED8!important;
             padding:0 0 16px 0!important;
+            margin-bottom:4px!important;
             min-width:0!important;
           }
           .ins-quote-col{
@@ -234,32 +266,36 @@ export default function Banner() {
             justify-content:center!important;
             width:100%!important;
           }
-          .ins-spacer{
-            padding-top:${QUOTE_BAR_HALF + 32}px!important;
-          }
         }
 
-        /* ── MOBILE (≤600px) ── */
+        /* ─────────────────────────────────────────────
+           MOBILE  (≤600px)  — matches the reference
+           ───────────────────────────────────────────── */
         @media(max-width:600px){
           .ins-section{
             padding-top:72px!important;
+            padding-bottom:76px!important;   /* blue room for the header overlap */
           }
           .ins-inner{
-            padding:24px 16px 0!important;
+            padding:24px 20px 0!important;
           }
           .ins-left{
-            padding-bottom:32px!important;
+            max-width:100%!important;
+            padding-bottom:36px!important;
+            text-align:left!important;
           }
           .ins-left h1{
-            font-size:clamp(26px,7.5vw,38px)!important;
+            font-size:clamp(28px,8vw,40px)!important;
           }
           .ins-left p{
             font-size:14px!important;
+            max-width:100%!important;
           }
           .ins-cta-row{
             flex-direction:column!important;
-            align-items:center!important;
-            gap:10px!important;
+            align-items:stretch!important;
+            gap:12px!important;
+            margin-bottom:44px!important;
           }
           .ins-cta-row a{
             width:100%!important;
@@ -267,29 +303,62 @@ export default function Banner() {
             box-sizing:border-box!important;
           }
           .ins-stats{
-            justify-content:center!important;
-            gap:8px 0!important;
+            display:none!important;   /* hide stats row on mobile */
           }
-          .ins-stats > div{
-            padding-right:12px!important;
-          }
+
           .ins-right > div{
-            width:100%!important;
+            width:220px!important;
+            max-width:220px!important;
           }
           .ins-right img{
-            max-width:240px!important;
+            width:100%!important;
+            max-width:100%!important;
           }
+
+          .floating-card{
+            transform:scale(0.62)!important;
+          }
+          .card-health{  top:6%!important;  left:-16%!important;  transform-origin:top left; }
+          .card-advisor{ top:6%!important;  right:-12%!important; transform-origin:top right; }
+          .card-claim{   bottom:16%!important; left:-16%!important;  transform-origin:bottom left; }
+          .card-expert{  bottom:16%!important; right:-12%!important; transform-origin:bottom right; }
+
+          /* header sits in the blue, fields/button on white */
           .ins-quote-wrap{
-            padding:20px 16px!important;
+            margin-top:-64px!important;
+            padding:0 16px!important;
           }
           .ins-quotebar{
             border-radius:14px!important;
           }
-        
+        }
+
+        /* ─────────────────────────────────────────────
+           SMALL MOBILE  (≤380px)
+           ───────────────────────────────────────────── */
+        @media(max-width:380px){
+          .ins-inner{ padding:24px 14px 0!important; }
+          .ins-right > div{ width:200px!important; max-width:200px!important; }
+          .floating-card{ transform:scale(0.55)!important; }
+          .card-health,.card-claim{ left:-20%!important; }
+          .card-advisor,.card-expert{ right:-16%!important; }
+        }
+
+        /* ─────────────────────────────────────────────
+           DESKTOP SAFETY  (1281px–1500px)
+           Just above the stacking breakpoint the 1280px
+           content box leaves little room on the sides, so
+           pull the right-hand cards flush to the edge to
+           keep them fully on-screen. Wider screens (>1500)
+           keep the original overhanging look.
+           ───────────────────────────────────────────── */
+        @media(min-width:1281px) and (max-width:1500px){
+          .card-advisor{ right:0!important; }
+          .card-expert{ right:0!important; }
         }
       `}</style>
 
-      <div className="ins-root">
+      <div className="ins-root" style={{position:"relative", background:"#fff"}}>
         <section className="ins-section" style={{
           background:"linear-gradient(160deg, #0B2080 0%, #0A1B6B 45%, #061448 100%)",
           position:"relative", overflow:"visible",
@@ -360,7 +429,7 @@ export default function Banner() {
               <div style={{position:"relative", width:"88%", marginRight:"-24px"}}>
 
                 {/* ── CARD 1: ₹50L Health Cover (top-left) ── */}
-                <FloatingCard style={{top:"30%", left:"-25%"}}>
+                <FloatingCard className="card-health" style={{top:"30%", left:"-25%"}}>
                   <IconBox>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#00B3FB" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
@@ -374,7 +443,7 @@ export default function Banner() {
                 </FloatingCard>
 
                 {/* ── CARD 2: Advisor Online (top-right) ── */}
-                <FloatingCard style={{top:"30%", right:"-15%"}}>
+                <FloatingCard className="card-advisor" style={{top:"30%", right:"-15%"}}>
                   <div style={{position:"relative", flexShrink:0}}>
                     <IconBox>
                       <svg viewBox="0 0 24 24" width="32" height="32" fill="#00B3FB" stroke="#00B3FB" strokeWidth={1.8} xmlns="http://www.w3.org/2000/svg">
@@ -395,7 +464,7 @@ export default function Banner() {
                 </FloatingCard>
 
                 {/* ── CARD 3: 24 hrs Avg. Claim Time (bottom-left) ── */}
-                <FloatingCard style={{bottom:"18%", left:"-28%"}}>
+                <FloatingCard className="card-claim" style={{bottom:"18%", left:"-28%"}}>
                   <IconBox>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#00B3FB">
                       <path fillRule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clipRule="evenodd" />
@@ -407,8 +476,8 @@ export default function Banner() {
                   </div>
                 </FloatingCard>
 
-                {/* ── CARD 4: Renjith Kumar – Insurance Expert (bottom-right) ── */}
-                <FloatingCard style={{bottom:"18%", right:"-12%"}}>
+                {/* ── CARD 4: Trusted by Thousands (bottom-right) ── */}
+                <FloatingCard className="card-expert" style={{bottom:"18%", right:"-12%"}}>
                   <div style={{
                     width:52, height:52, borderRadius:"50%",
                     background:"#00B3FB",
@@ -431,19 +500,19 @@ export default function Banner() {
               </div>
             </div>
           </div>
-
-          {/* Quote bar */}
-          <div className="ins-quote-wrap" style={{
-            position:"absolute", bottom:`-${QUOTE_BAR_HALF}px`,
-            left:0, right:0, zIndex:20, padding:"0 48px",
-          }}>
-            <div style={{maxWidth:1280,margin:"0 auto"}}>
-              <QuoteBar />
-            </div>
-          </div>
         </section>
 
-    
+        {/* Quote bar — sits OUTSIDE the blue section and is pulled up to
+            straddle the banner edge (header in blue, fields on white) */}
+        <div className="ins-quote-wrap" style={{
+          position:"relative", zIndex:20, padding:"0 48px",
+          marginTop:`-${QUOTE_BAR_HALF}px`,
+        }}>
+          <div style={{maxWidth:1280,margin:"0 auto"}}>
+            <QuoteBar />
+          </div>
+        </div>
+
       </div>
     </>
   );
